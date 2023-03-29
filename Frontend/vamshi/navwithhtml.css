@@ -233,6 +233,35 @@ body{
 #footer>div{
     background-color: #004566;
     width: 100%;
-    
+    padding: 15px 10px 15px 10px;
 }
+
+#footer>div>div>div{
+    margin-right: 15px;
+}
+
+.sty{
+   text-decoration: underline;
+   cursor: pointer;
+}
+
+#seconddiv>div{
+    font-size: 15px;
+    cursor: pointer;
+
+}
+
+#seconddiv>div:nth-child(1){
+    color: #f07922;
+}
+
+#seconddiv>div:nth-child(5){
+    color: #f07922;
+}
+
+#seconddiv>div:hover{
+    color: #f07922;
+}
+
+
 /* Footer code ends */
