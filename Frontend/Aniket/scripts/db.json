@@ -1,0 +1,53 @@
+{
+  "teachers": [
+    {
+      "name": "Ritesh Agarwal",
+      "education": "B.S. Mathematical and Computational Science, Stanford University; M.S. Financial Economics, University of Oxford",
+      "subject": "Physics, Chemistry, Maths, English",
+      "image": "https://cdn5.newsnationtv.com/images/2020/11/28/riteshagarwal-70.jpg",
+      "type": "kidsHair",
+      "id": 1
+    },
+    {
+      "name":"Ritesh Agarwal",
+      "education": "B.S. Mathematical and Computational Science, Stanford University; M.S. Financial Economics, University of Oxford",
+        "subject": "Physics, Chemistry, Maths, English",      
+      "image": "http://tutorpedia.com/wp-content/uploads/2021/09/5f1f2aaf4e896b82dd4d1896_ESM-Mentor-Wide_John-Neville-270x180.jpg",
+      "type": "hairColor",
+      "id": 3
+    },
+    {
+      "name": "Ritesh Agarwal",
+      "education": "B.S. Mathematical and Computational Science, Stanford University; M.S. Financial Economics, University of Oxford",
+        "subject": "Physics, Chemistry, Maths, English",      
+      "image": "http://tutorpedia.com/wp-content/uploads/2021/09/5f1f2aaf4e896b82dd4d1896_ESM-Mentor-Wide_John-Neville-270x180.jpg",
+      "type": "beardShaving",
+      "id": 4
+    },
+    {
+      "name": "Ritesh Agarwal",
+      "education": "B.S. Mathematical and Computational Science, Stanford University; M.S. Financial Economics, University of Oxford",
+        "subject": "Physics, Chemistry, Maths, English",      
+      "image": "http://tutorpedia.com/wp-content/uploads/2021/09/5f1f2aaf4e896b82dd4d1896_ESM-Mentor-Wide_John-Neville-270x180.jpg",
+      "type": "beardShaving",
+      "id": 5
+    },
+    {
+      "name": "Ritesh Agarwal",
+      "education": "B.S. Mathematical and Computational Science, Stanford University; M.S. Financial Economics, University of Oxford",
+        "subject": "Physics, Chemistry, Maths, English",      
+      "image": "http://tutorpedia.com/wp-content/uploads/2021/09/5f1f2aaf4e896b82dd4d1896_ESM-Mentor-Wide_John-Neville-270x180.jpg",
+      "type": "faceCare",
+      "id": 6
+    },
+    {
+      "name": "Ritesh Agarwal",
+      "education": "B.S. Mathematical and Computational Science, Stanford University; M.S. Financial Economics, University of Oxford",
+        "subject": "Physics, Chemistry, Maths, English",      
+      "image": "http://tutorpedia.com/wp-content/uploads/2021/09/5f1f2aaf4e896b82dd4d1896_ESM-Mentor-Wide_John-Neville-270x180.jpg",
+      "type": "faceCare",
+      "id": 7
+    }
+   
+  ]
+}
