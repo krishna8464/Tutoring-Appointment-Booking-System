@@ -11,9 +11,16 @@ body {
     /* border: 2px solid rgb(128, 0, 113); */
     gap: 4px;
     padding: 15px 15px;
-   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   border: 1px solid rgb(209, 209, 209);
    /* border-radius: 7px; */
   }
+
+  .card:hover{
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   cursor: pointer;
+  }
+
+  
   .imgDiv{
     /* border: 2px solid black; */
     height: 40%;
@@ -200,7 +207,7 @@ body {
     #packageDiv {
       /* height: 500px; */
       /* width: 100%; */
-     border: 2px solid rgb(114, 44, 220);
+     /* border: 2px solid rgb(114, 44, 220); */
      display: grid;
      grid-template-columns: repeat(4,1fr);
      /* padding: 0px 20px 0px 20px; */
@@ -210,7 +217,7 @@ body {
 
     @media only screen and (max-width: 600px) {
         #packageDiv {
-            grid-template-columns: repeat(2,1fr);
+            grid-template-columns: repeat(1,1fr);
      padding: 0px 0px 0px 0px;
      gap: 10px;
             
