@@ -1,0 +1,9 @@
+login = http://localhost:9090/userLogin/login
+signup = http://localhost:9090//userSignup/signup
+
+studentRoute =>
+     adddetails = http://localhost:9090/scheduler/student/addDetails
+
+
+teachrRoute =>
+    adddetails = http://localhost:9090/scheduler/teacher/addDetails
