@@ -22,8 +22,6 @@ StudentRouter.post("/addDetails",(req,res)=>{
                 studentId :decoded.userid,
                 name:decoded.name,
                 email:decoded.email,
-                mobile:decoded.mobile,
-                gender:decoded.gender
             }
             const student = new StudentModel({studentDetail,address,standard,subjects,courseDetails})
             await student.save()

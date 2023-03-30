@@ -6,6 +6,7 @@ const jwt = require("jsonwebtoken");
 require("dotenv").config();
 var cookieParser = require('cookie-parser')
 
+const {passport}=require('./Config/googleAuth')
 
 
 const app = express();
@@ -48,6 +49,21 @@ app.use("/scheduler/teacher",TeacherRouter)
 app.get("/",(req,res)=>{
     res.send("ok")
 })
+
+//googleAuth
+app.get('/auth/google',
+  passport.authenticate('google', { scope: ['profile','email'] }));
+
+  app.get('/auth/google/callback', 
+  passport.authenticate('google', { failureRedirect: '/userRoutes/login',session:false}),
+  function({user}, res) {
+    // Successful authentication, redirect home.
+    const token = jwt.sign({ userid: user._id,email:user.email,isAdmin:user.isAdmin,"name":user.name,"email":user.email,"mobile":user.mobile,"gender":user.gender }, process.env.Token_Pass, { expiresIn: '5d' })
+    res.cookie("token",token,{httpOnly:true})
+    res.status(201).send({'msg':'Login succesfull','token':token})
+    
+});
+
 
 
 

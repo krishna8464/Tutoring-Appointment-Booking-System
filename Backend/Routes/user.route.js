@@ -6,6 +6,7 @@ require('dotenv').config()
 var cookieParser = require('cookie-parser')
 const Redis = require('ioredis');
 
+
 const {UserModel}=require('../Models/User.model');
 
 const UserRouter = express.Router()
@@ -16,7 +17,7 @@ const {validate} = require('../middlewares/signup_validate')
 
 //signup
 UserRouter.post('/signup',validate, async (req, res) => {
-    const { email, password, mobile, name ,avatar,gender,isAdmin,isActive} = req.body;
+    const { email, password, name ,avatar,isAdmin,isActive} = req.body;
     const check = await UserModel.find({ email });
     if(!check.length){
         bcrypt.hash(password, 6, async function (err, hash) {
@@ -25,7 +26,7 @@ UserRouter.post('/signup',validate, async (req, res) => {
             }
             else {
                 try {
-                    const user= new UserModel({ email, password: hash, name, mobile,avatar,gender,isActive,isAdmin })
+                    const user= new UserModel({ email, password: hash, name, avatar,isActive,isAdmin })
                     await  user.save()
                     let userName = name
                     const transporter = nodemailer.createTransport({
@@ -102,7 +103,7 @@ UserRouter.post('/login', async (req, res) => {
                     res.status(500).send({ 'msg': "Something went wrong" })
                 }
                 else if (result) {
-                    const token = jwt.sign({ userid: user._id,email:user.email,isAdmin:user.isAdmin,"name":user.name,"email":user.email,"mobile":user.mobile,"gender":user.gender }, process.env.Token_Pass, { expiresIn: '5d' })
+                    const token = jwt.sign({ userid: user._id,email:user.email,isAdmin:user.isAdmin,name:user.name,email:user.email }, process.env.Token_Pass, { expiresIn: '5d' })
 
                     let update = {isActive:true}
                     let filter = {email:email}
@@ -110,7 +111,7 @@ UserRouter.post('/login', async (req, res) => {
 
                     res.cookie("token",token,{httpOnly:true})
                     res.setHeader("token",token)
-                    res.status(201).send({"msg":"Login successfull"})
+                    res.status(201).send({"msg":"Login successfull","username":user.name,"userEmail":user.email })
                 }
                 else {
                     res.send({ 'msg': "incorrect password" })
@@ -221,6 +222,7 @@ UserRouter.post('/verifyOTP', async (req, res) => {
     try {
         const VerifyOtp = req.cookies.VerifyOtp;
         if(otp === VerifyOtp){
+             res.clearCookie('VerifyOtp');
             res.status(200).send({ "msg": 'otp Verified' })
         }
     }
@@ -236,7 +238,7 @@ UserRouter.post('/verifyOTP', async (req, res) => {
 UserRouter.post('/changePassword',async(req,res)=>{
     let {password} = req.body
     let email = req.cookies.VerifyEmail
-    console.log(password,email)
+    //console.log(password,email)
     try{
         if(email){
            
@@ -248,6 +250,7 @@ UserRouter.post('/changePassword',async(req,res)=>{
                     let update = {password:hash}
                     let filter = {email:email}
                     await UserModel.findOneAndUpdate(filter,update)
+                    res.clearCookie('VerifyEmail');
                     res.status(200).send({ "msg": 'password updated' })
                 }
 
@@ -263,6 +266,8 @@ UserRouter.post('/changePassword',async(req,res)=>{
 
 
 })
+
+
 
 
 module.exports = { UserRouter}
