@@ -8,18 +8,147 @@
         <!--<title> Responsive Login and Signup Form </title>-->
 
         <!-- CSS -->
+        
         <link rel="stylesheet" href="./signup.css">
+    
                 
         <!-- Boxicons CSS -->
         <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
                         
     </head>
     <body>
-        <section class="container forms">
+
+<!--  tf start here  -->
+
+        <div class="container" id="Tf">
+            <div class="title">Teacher-Details</div>
+            <div class="content">
+              <form action="# " id="TeacherDetails">
+                <div class="user-details">
+                  <div class="input-box">
+                    <span class="details">Full Name</span>
+                    <input type="text" placeholder="Enter your name" id="tname" required>
+                  </div>
+                  <div class="input-box">
+                    <span class="details">Qualification</span>
+                    <input type="text" placeholder="Enter your Qualification" id="tquali" required>
+                  </div>
+                  <div class="input-box">
+                    <span class="details">City</span>
+                    <input type="text" placeholder="Enter city name" id="tcity" required>
+                  </div>
+                  
+                  <div class="input-box">
+                    <span class="details">State</span>
+                    <input type="text" placeholder="Enter State name" id="tstate" required>
+                  </div>
+
+                  <div class="input-box">
+                    <span class="details">Pincode</span>
+                    <input type="number" placeholder="Enter Pincode" id="tpin" required>
+                  </div>
+                  <div class="input-box">
+                    <span class="details">Experience</span>
+                    <input type="text" placeholder="Experience" id="exp" required>
+                  </div>
+
+                  <!-- <div class="input-box">
+                    <span class="details">Phone Number</span>
+                    <input type="text" placeholder="Enter your number" id="tnum" >
+                  </div> -->
+                  <div class="input-box">
+                    <span class="details">Experties</span>
+                    <input type="text" placeholder="Experties" id="tex" required>
+                  </div>
+                
+                  <div class="input-box">
+                    <span class="details">Gender</span>
+                    <select name="tgen " id="tgen" >
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                       </select>
+                </div>
+          
+                </div>
+          
+          
+              
+                <div class="button">
+                  <input type="submit" value="Submit">
+                </div>
+              </form>
+            </div>
+          </div>
+          
+          <!--  tf end here  -->
+          
+          <!-- sf start here  -->
+
+
+          <div class="container" id="Sf">
+            <div class="title">Student -Details</div>
+            <div class="content">
+              <form action="# " id="StudentDetails">
+                <div class="user-details">
+                  <div class="input-box">
+                    <span class="details">Full Name</span>
+                    <input type="text" placeholder="Enter your name" id="sname" required>
+                  </div>
+                  <div class="input-box">
+                    <span class="details">City</span>
+                    <input type="text" placeholder="Enter city name" id="scity" required>
+                  </div>
+                  
+                  <div class="input-box">
+                    <span class="details">State</span>
+                    <input type="text" placeholder="Enter State name" id="sstate" required>
+                  </div>
+
+                  <div class="input-box">
+                    <span class="details">Pincode</span>
+                    <input type="number" placeholder="Enter Pincode" id="spin" required>
+                  </div>
+
+                  <!-- <div class="input-box">
+                    <span class="details">Phone Number</span>
+                    <input type="text" placeholder="Enter your number" >
+                  </div> -->
+                  <div class="input-box">
+                    <span class="details">Subjects</span>
+                    <input type="text" placeholder="Subjects" id="subs" required>
+                  </div>
+                 
+                
+                 
+                
+                  <div class="input-box">
+                    <span class="details">Gender</span>
+                    <select name="sgen " id="sgen" >
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                       </select>
+                </div>
+          
+                </div>
+          
+          
+              
+                <div class="button">
+                  <input type="submit" value="Submit">
+                </div>
+              </form>
+            </div>
+          </div>
+          
+<!-- sf end here  -->
+
+        <section class="container forms" id="nf">
             <div class="form login">
                 <div class="form-content">
                     <header>Login</header>
-                    <form action="#">
+                    <form action="#" id="Lform">
                         <div class="field input-field">
                             <input type="email" placeholder="Email" class="input">
                         </div>
@@ -34,7 +163,7 @@
                         </div>
 
                         <div class="field button-field">
-                            <button>Login</button>
+                            <button id="login">Login</button>
                         </div>
                     </form>
 
@@ -61,7 +190,9 @@
             <div class="form signup">
                 <div class="form-content">
                     <header>Signup</header>
-                    <form action="#">
+                    <form action="#" id="Sform">
+                     
+
                         <div class="field input-field">
                             <input type="email" placeholder="Email" class="input">
                         </div>
@@ -71,17 +202,21 @@
                         </div>
 
                        
-
+                        
                         <select name="role " id="role" >
                             <option value="">Posigition</option>
                             <option value="student">Student</option>
                             <option value="teacher">Teacher</option>
                            </select>
 
-                        <div class="field button-field">
-                            <button>Signup</button>
-                        </div>
+                        
+                         <button id="signup"></button>
+                        
                     </form>
+                 
+                    <div class="field button-field">
+                     <button id="Next">Next</button>
+                    </div>
 
                     <div class="form-link">
                         <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
