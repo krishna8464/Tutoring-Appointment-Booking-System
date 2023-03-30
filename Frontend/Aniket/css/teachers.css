@@ -75,10 +75,13 @@ body {
     margin-top: 0px;
     margin-bottom: 8px;
   }
-  
+  .addBtn :hover{
+    background-color:rgb(255, 90, 31) ;
+  } 
   .addBtn{
     border: none;
     color: white;
+
     background-color: #f07922;
     border-radius: 5px;
     margin: auto;
@@ -91,6 +94,7 @@ body {
   .addBtn :hover{
     background-color: rgb(116, 99, 93);
     cursor: pointer;
+
   }
 
   .details{
