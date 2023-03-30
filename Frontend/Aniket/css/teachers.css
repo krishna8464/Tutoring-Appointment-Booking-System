@@ -3,6 +3,7 @@ body {
     padding: 0;
     font-family: axiforma-regular, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
     ;
+    background-color: #f5f5f5;
   }
   .card{
    /* height: 60vh; */
@@ -11,8 +12,9 @@ body {
     /* border: 2px solid rgb(128, 0, 113); */
     gap: 4px;
     padding: 15px 15px;
-   border: 1px solid rgb(209, 209, 209);
+   border: 1px solid rgb(255, 158, 123);
    /* border-radius: 7px; */
+   background-color: #fff;
   }
 
   .card:hover{
@@ -42,8 +44,9 @@ body {
     /* border: 2px solid red; */
     margin: auto;
     margin-top: 5px;
-    font-size: 16px;
+    font-size: 15px;
     /* padding: 0px 0px 0px 30px; */
+    color: #606060;
   }
   .bigDiv i{
     margin-right: 8px;
@@ -67,8 +70,8 @@ body {
     color: grey;
   }
   .bigDiv>h4{
-    color: orangered;
-    font-size: 22px;
+    color: #f07922;
+    font-size: 19px;
     margin-top: 0px;
     margin-bottom: 8px;
   }
@@ -76,12 +79,18 @@ body {
   .addBtn{
     border: none;
     color: white;
-    background-color: orangered;
-    border-radius: 2px;
+    background-color: #f07922;
+    border-radius: 5px;
     margin: auto;
     text-align: center;
-    padding: 5px 12px;
-    font-size: 16px;
+    padding: 9px 12px;
+    font-size: 15px;
+    width: 100%;
+  }
+
+  .addBtn :hover{
+    background-color: rgb(116, 99, 93);
+    cursor: pointer;
   }
 
   .details{
@@ -212,7 +221,7 @@ body {
      grid-template-columns: repeat(4,1fr);
      /* padding: 0px 20px 0px 20px; */
      margin-top: 20px;
-     gap: 25px;
+     gap: 15px;
     }
 
     @media only screen and (max-width: 600px) {
