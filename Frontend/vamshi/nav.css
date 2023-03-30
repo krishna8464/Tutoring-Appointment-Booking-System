@@ -1,0 +1,48 @@
+#nav{
+    width: 75%;
+    margin: auto;
+    margin-top: 20px;
+    border: 1px solid red;
+}
+body{
+    font-family: 'Chewy';
+}
+
+#logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+   font-family: 'Chewy';
+   font-size: 22px;
+}
+
+#divcont{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#navelemetns{
+    display: flex;
+}
+#navelemetns>div{
+    margin-right: 20px;
+    font-size: 17px;
+}
+#navelemetns>div:hover{
+    color: #f07922;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-position: under;
+    text-decoration-color: #f07922;
+}
+
+@media screen and (min-width:1240px) and (max-width:1080px) {
+    #contdiv{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+

@@ -4,11 +4,12 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config()
 
 const {TeacherModel}=require('../Models/teacher.model');
+const {authenticate} = require('../middlewares/Authentication')
 
 const TeacherRouter = express.Router()
 TeacherRouter.use(cookieParser())
 
-TeacherRouter.post("/addDetails",(req,res)=>{
+TeacherRouter.post("/addDetails",authenticate,(req,res)=>{
     const token = req.headers?.authorization?.split(" ")[1] || req.cookies?.token
 
     const {address,qualification,experience,expertise,rating} = req.body
@@ -30,6 +31,12 @@ TeacherRouter.post("/addDetails",(req,res)=>{
             res.send("ok")
         }
     })
+})
+
+//get All Teacher Details
+TeacherRouter.get("/getAllTeacher",async(req,res)=>{
+    const Teachers = await TeacherModel.find()
+    res.send(Teachers)
 })
 
 

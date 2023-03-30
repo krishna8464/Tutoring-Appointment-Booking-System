@@ -39,11 +39,9 @@ const {TeacherRouter} = require('./Routes/teacher.route')
 
 
 //Api End points
-app.use('/userSignup',validate,UserRouter)
-app.use('/userLogin',UserRouter)
-
+app.use('/userRoutes',UserRouter)
 app.use("/scheduler/student",authenticate,StudentRouter)
-app.use("/scheduler/teacher",authenticate,TeacherRouter)
+app.use("/scheduler/teacher",TeacherRouter)
 
 
 

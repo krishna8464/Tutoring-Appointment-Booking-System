@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken')
 const nodemailer = require('nodemailer');
 require('dotenv').config()
 var cookieParser = require('cookie-parser')
+const Redis = require('ioredis');
 
 const {UserModel}=require('../Models/User.model');
 
@@ -11,8 +12,10 @@ const UserRouter = express.Router()
 
 UserRouter.use(cookieParser())
 
+const {validate} = require('../middlewares/signup_validate')
 
-UserRouter.post('/signup', async (req, res) => {
+//signup
+UserRouter.post('/signup',validate, async (req, res) => {
     const { email, password, mobile, name ,avatar,gender,isAdmin,isActive} = req.body;
     const check = await UserModel.find({ email });
     if(!check.length){
@@ -67,7 +70,7 @@ UserRouter.post('/signup', async (req, res) => {
                             res.status(500).send({ "msg": "Something went wrong" })
                         } else {
                             console.log('Email Sent Successfully');
-                            res.status(201).send({ "msg": `Login Successfully`, "email": email })
+                            res.status(201).send({ "msg": `Signup Successfully`, "email": email })
     
                         }
                     })
@@ -85,7 +88,7 @@ UserRouter.post('/signup', async (req, res) => {
    
 })
 
-
+//login
 UserRouter.post('/login', async (req, res) => {
     const { email, password } = req.body;
     const user = await UserModel.findOne({ email });
@@ -125,9 +128,139 @@ UserRouter.post('/login', async (req, res) => {
 })
 
 
-UserRouter.post("/logout",(req,res)=>{
-    let isActive = req.body
+//logout
+UserRouter.get("/logout",async(req,res)=>{
+    try{
+        const token = req.cookies.token;
+        if(token){
+            jwt.verify(token,process.env.Token_Pass,async function(err,decoded){
+                if(err){
+                    res.status(401).send({"msg":"some Error","err":err.message})
+                }
+                else{
+                    let email = decoded.email
+                    let update = {isActive:false}
+                    let filter = {email:email}
+                    await UserModel.findOneAndUpdate(filter,update)
+                    res.clearCookie('token');
+                    
+                    res.sendStatus(200);
+       
+                }
+            })
+        }
+        
+      
+    }
+    catch(err){
+        res.status(500).send({ "msg": "Somethng went wrong" })
+    }
+   
+})
+
+
+
+//forgotPassword
+UserRouter.post('/forgotPasword',async (req,res)=>{
+    const {email} =  req.body
+    console.log(email)
+    try{
+        let otp = Math.ceil(Math.random() * 10000)
+       
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                type: 'OAuth2',
+                user: process.env.EMAIL,
+                pass: process.env.PASSWORD,
+                clientId: process.env.CLIENT_ID,
+                clientSecret: process.env.CLIENT_SECRET,
+                refreshToken: process.env.REFRESH_TOKEN
+            }
+        });
+        const mailConfigurations = {
+            from: process.env.EMAIL,
+            to: email,
+            subject: `Reset Password`,    
+            html:`<div style="width:100%;">
+                <div>
+                    <p>Enter the OTP:${otp} to reset your password </p>
+                    <p>Redirect to Our Website www.example.com </p>
+                </div>      
+                <h4>Regards, <br> Schedular Team</h4>
+            </div>`
+  
+        };
+
+        transporter.sendMail(mailConfigurations, async function(error, info) {
+            if (error) {
+                console.log('ERR: Error from nodemailer')
+                console.log(error)
+                res.status(500).send({ "msg": "Something went wrong with message service" })
+            } else {
+                console.log('Email Sent Successfully');
+                res.cookie("VerifyOtp",otp,{httpOnly:true})
+                res.cookie("VerifyEmail",email,{httpOnly:true})
+                res.status(201).send({ "msg": `otp send`, "email": email })
+
+            }
+        })
+
+    }
+    catch(err){
+        console.log(err);
+        res.status(500).send({ "msg": "Somethng went wrong" })
+    }
+})
+
+
+//verify OTP
+UserRouter.post('/verifyOTP', async (req, res) => {
+    let { otp } = req.body;
+    if (!otp) return res.status(401).send({ 'msg': "Please enter otp" })
+    try {
+        const VerifyOtp = req.cookies.VerifyOtp;
+        if(otp === VerifyOtp){
+            res.status(200).send({ "msg": 'otp Verified' })
+        }
+    }
+    catch (err) {
+        res.status(500).send({ "msg": 'Something went wrong' })
+
+    }
+})
+
+
+//changepassword
+
+UserRouter.post('/changePassword',async(req,res)=>{
+    let {password} = req.body
+    let email = req.cookies.VerifyEmail
+    console.log(password,email)
+    try{
+        if(email){
+           
+            bcrypt.hash(password, 6, async function (err, hash) {
+                if(err){
+                    res.send(err)
+                }
+                else{
+                    let update = {password:hash}
+                    let filter = {email:email}
+                    await UserModel.findOneAndUpdate(filter,update)
+                    res.status(200).send({ "msg": 'password updated' })
+                }
+
+            })
+
+        }
+
+    }
+    catch(err){
+        res.send(err)
+    }
     
+
 
 })
 
