@@ -89,6 +89,7 @@ UserRouter.post('/signup',validate, async (req, res) => {
    
 })
 
+
 //login
 UserRouter.post('/login', async (req, res) => {
     const { email, password } = req.body;
