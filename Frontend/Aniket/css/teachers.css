@@ -65,16 +65,19 @@ body {
     margin-top: 0px;
     margin-bottom: 8px;
   }
-  
+  .addBtn :hover{
+    background-color:rgb(255, 90, 31) ;
+  } 
   .addBtn{
     border: none;
     color: white;
     background-color: orangered;
-    border-radius: 2px;
+    border-radius: 5px;
     margin: auto;
     text-align: center;
-    padding: 5px 12px;
+    padding: 8px 12px;
     font-size: 16px;
+    width: 100%;
   }
 
   .details{
@@ -200,7 +203,7 @@ body {
     #packageDiv {
       /* height: 500px; */
       /* width: 100%; */
-     border: 2px solid rgb(114, 44, 220);
+     /* border: 2px solid rgb(114, 44, 220); */
      display: grid;
      grid-template-columns: repeat(4,1fr);
      /* padding: 0px 20px 0px 20px; */
