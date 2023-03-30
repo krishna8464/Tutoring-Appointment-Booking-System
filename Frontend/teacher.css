@@ -1,0 +1,261 @@
+#nav {
+  width: 100%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 19px 3px;
+}
+body {
+  font-family: "Chewy";
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Chewy";
+  font-size: 22px;
+  color: black;
+}
+
+#divcont {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#navelemetns {
+  display: flex;
+}
+#navelemetns > div {
+  margin-right: 20px;
+  font-size: 17px;
+}
+#navelemetns > div:hover {
+  color: #f07922;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: #f07922;
+  font-style: bold;
+}
+
+#contdiv > img {
+  margin-right: 5px;
+}
+
+@media screen and (min-width: 1240px) and (max-width: 1080px) {
+  #contdiv {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 995px) {
+  #navelemetns {
+    flex-direction: column;
+  }
+}
+
+
+
+
+
+
+
+
+/* body started */
+
+#tutor-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 180px;
+  background-color: #457992;
+  color: white;
+}
+
+#tutor-heading {
+  text-align: center;
+}
+
+#tutor-detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+#personal-info {
+  width: 45%;
+}
+#det-right {
+  width: 50%;
+}
+
+[data-tab-info] {
+  display: none;
+}
+
+.active[data-tab-info] {
+  display: block;
+}
+
+
+.tab-content {
+  padding: 40px;
+  font-family: sans-serif;
+  color: rgb(82, 75, 75);
+  background-color: rgb(240,242,245);
+}
+
+.tabs {
+  width: 100%;
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  display: flex;
+  margin: 0;
+  justify-content: space-between;
+}
+
+.tabs span {
+  width: 50%;
+  color: rgb(82, 75, 75);
+  padding: 10px;
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.tabs span:hover {
+  background: #457992;
+  cursor: pointer;
+  color: rgb(237, 225, 225);
+}
+
+#get-started{
+    cursor: pointer;
+    background-color:rgb(240, 121, 34);
+    color: white;
+    border: none;
+    padding: 20px;
+}
+
+#tab_2{
+    background-color:rgb(247,247,247) ;
+}
+
+@media screen and (min-width: 1240px) and (max-width: 1080px) {
+  #tutor-detail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #personal-info {
+    width: 95%;
+  }
+  #det-right {
+    width: 95%;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 995px) {
+  #tutor-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #personal-info {
+    width: 100%;
+  }
+  #det-right {
+    width: 100%;
+  }
+}
+
+/* for footerr */
+
+
+
+
+
+
+
+
+/* Footer code starts */
+#footer>div{
+    /* margin-top: 250px; */
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+#footer>div>div{
+    display: flex;
+}
+
+
+#footer>div{
+    background-color: #004566;
+    width: 100%;
+    padding: 15px 10px 15px 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#footer>div>div>div{
+    margin-right: 15px;
+}
+
+.sty{
+   text-decoration: underline;
+   cursor: pointer;
+}
+
+.sty:hover{
+    color: #f07922;
+}
+
+#seconddiv>div{
+    font-size: 15px;
+    cursor: pointer;
+
+}
+
+#seconddiv>div:nth-child(1){
+    color: #f07922;
+}
+
+#seconddiv>div:nth-child(5){
+    color: #f07922;
+}
+
+#seconddiv>div:hover{
+    color: #f07922;
+}
+
+@media all and (min-width: 585px) and (max-width: 1035px) {
+    #footer>div{
+        flex-direction: column;
+    }
+}
+
+@media all and (min-width: 317px) and (max-width: 585px) {
+    #footer>div{
+        flex-direction: row;
+    }
+    #footer>div>div{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media all and (min-width: 0px) and (max-width: 317px) {
+    #footer>div{
+        flex-direction: column;
+    }
+    #footer>div>div{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Footer code ends */
