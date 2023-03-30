@@ -23,8 +23,6 @@ TeacherRouter.post("/addDetails",authenticate,(req,res)=>{
                 teacherId :decoded.userid,
                 name:decoded.name,
                 email:decoded.email,
-                mobile:decoded.mobile,
-                gender:decoded.gender
             }
             const student = new TeacherModel({teacherDetail,address,qualification,experience,expertise,rating})
             await student.save()

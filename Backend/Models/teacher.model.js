@@ -6,8 +6,6 @@ const teacherSchema  =  mongoose.Schema({
         teacherId:String,
         name:String,
         email:String,
-        mobile:Number,
-        gender:String
     },
     address:{
         city:String,
