@@ -51,7 +51,7 @@ StudentRouter.get('/allStudents',async (req,res)=>{
 })
 
 
-StudentRouter.patch("/update/TeacherDetails",authenticate, async(req,res)=>{
+StudentRouter.patch("/update/studentDetails",authenticate, async(req,res)=>{
     const id  = req.body.userid ;
     const data = req.body
     console.log(data)
@@ -67,7 +67,7 @@ StudentRouter.patch("/update/TeacherDetails",authenticate, async(req,res)=>{
 })
 
 
-StudentRouter.delete("/delete/TeacherDetails",authenticate, async(req,res)=>{
+StudentRouter.delete("/delete/StudentDetails",authenticate, async(req,res)=>{
     const id  = req.body.userid ;
     try{
         await StudentModel.findOneAndDelete(id)
