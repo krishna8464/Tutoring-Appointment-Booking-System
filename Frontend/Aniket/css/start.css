@@ -13,7 +13,8 @@
 #title>div{
     margin: auto;
     /* border: 2px solid red; */
-    width: 15%;
+    width: 50%;
+    text-align: center;
 }
 #title>div >h1{
     font-size: 46px;
@@ -102,7 +103,7 @@ span{
     margin-bottom: 40px;
     border-radius: 5px;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     #top{
         width: 100%;
         margin: auto;
@@ -163,7 +164,7 @@ height: 100vh;
         width: 90%;
        }
     .para{
-        width: 70%;
+        width: 80%;
         /* border: 2px solid red; */
         font-size: 17px;
         text-align: center;

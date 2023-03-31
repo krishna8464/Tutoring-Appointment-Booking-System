@@ -12,14 +12,13 @@ getData();
 
 const append = (data) => {
   mainDiv.innerHTML = null;
-  data.forEach((el) => {
+  data.forEach((el,index) => {
     let cardDiv = document.createElement("div");
     cardDiv.className = "card";
     let bigDiv = document.createElement("div");
     bigDiv.className = "bigDiv";
     let imgDiv = document.createElement("div");
     imgDiv.className = "imgDiv";
-
 
 
     let title = document.createElement("h4");
