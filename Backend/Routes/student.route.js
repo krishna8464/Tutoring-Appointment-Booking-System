@@ -11,6 +11,8 @@ const redis = new Redis({
 })
 
 const {StudentModel}=require('../Models/student.model');
+const {authenticate} = require('../middlewares/AdminAuthentication')
+const {UserModel} = require('../Models/User.model')
 
 const StudentRouter = express.Router()
 StudentRouter.use(cookieParser())

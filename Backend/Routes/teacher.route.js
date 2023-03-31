@@ -24,29 +24,37 @@ TeacherRouter.use(cookieParser())
 TeacherRouter.post("/addDetails",async(req,res)=>{
     const SignUpToken = await redis.get('signupToken')
     const { mobile,gender,address,qualification,experience,expertise} = req.body
-  
-    jwt.verify(SignUpToken,process.env.Signup_pass,async function(err,decoded){
-        if(err){
-            res.status(401).send({"msg":"please login","err":err.message})
-        }
-        else{
-            const teacherDetail = {
-                teacherId :decoded.userid,
-                name:decoded.name,
-                email:decoded.email,
+
+    try{
+        
+        jwt.verify(SignUpToken,process.env.Signup_pass,async function(err,decoded){
+            if(err){
+                res.status(401).send({"msg":"please login","err":err.message})
             }
+            else{
+                const teacherDetail = {
+                    teacherId :decoded.userid,
+                    name:decoded.name,
+                    email:decoded.email,
+                }
 
-            const student = new TeacherModel({teacherDetail,mobile,gender,address,qualification,experience,expertise})
-            await student.save()
-            await redis.getdel('signupToken')
-            
-            let update = {isActive:true}
-            let filter = {email:decoded.email}
-            await UserModel.findOneAndUpdate(filter,update)
+                const student = new TeacherModel({teacherDetail,mobile,gender,address,qualification,experience,expertise})
+                await student.save()
+                await redis.getdel('signupToken')
+                
+                let update = {isActive:true}
+                let filter = {email:decoded.email}
+                await UserModel.findOneAndUpdate(filter,update)
 
-            res.send({ 'msg': "details added" })
-        }
-    })
+                res.send({ 'msg': "details added" })
+            }
+        })
+
+    }
+    catch(err){
+        res.send({"msg":"someting wrong"})
+    }
+  
 })
 
 

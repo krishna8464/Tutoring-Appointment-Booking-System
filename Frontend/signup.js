@@ -5,9 +5,14 @@ let links = document.querySelectorAll(".link");
 // code for change form end here
 
 const form = document.querySelector("#Sform"); // select the form element
-const Lform = document.querySelector("#Lform");
 
-const Loginbutton = document.querySelector("#login");
+links.forEach((link) => {
+  link.addEventListener("click", () => {
+    //preventing form submit
+    forms.classList.toggle("show-signup");
+  });
+});
+
 
 // Next function
 
@@ -59,6 +64,8 @@ async function addDetails(name, email, password) {
 }
 
 // login function
+const Loginbutton = document.querySelector("#login");
+const Lform = document.querySelector("#Lform");
 
 Loginbutton.addEventListener("click", async () => {
   const email = Lform.querySelector('input[type="email"]').value;
@@ -70,6 +77,7 @@ Loginbutton.addEventListener("click", async () => {
     email: email,
     password: password
   };
+  console.log(data)
 
   let res = await fetch(url, {
     method: "POST",
@@ -78,7 +86,7 @@ Loginbutton.addEventListener("click", async () => {
   });
   const response = await res.json();
   if(response.msg === "Login successfull"){
-    window.location.href = "index.html"
+      window.location.href = "index.html"
   }
   else{
     alert(response.msg)
@@ -98,22 +106,44 @@ Tform.addEventListener("submit", async function (event) {
   event.preventDefault();
 
   //   Get the values of the input fields
-  var phoneNumber = Tform.querySelector("#Mobile").value;
-  var gender = Tform.querySelector("#tgen").value;
-  var qualification = Tform.querySelector("#Qualification").value;
-  var experience = Tform.querySelector("#Experience").value;
-  var city = Tform.querySelector("#tcity").value;
-  var state = Tform.querySelector("#tstate").value;
-  var pincode = Tform.querySelector("#tpin").value;
- 
+ let phoneNumber = Tform.querySelector("#Mobile").value;
+ let gender = Tform.querySelector("#tgen").value;
+ let qualification = Tform.querySelector("#Qualification").value;
+ let experience = Tform.querySelector("#Experience").value;
+ let city = Tform.querySelector("#tcity").value;
+ let state = Tform.querySelector("#tstate").value;
+ let pincode = Tform.querySelector("#tpin").value;
 
  
-  var tex1 = Tform.querySelector("#tex1").value;
-  var tex2 = Tform.querySelector("#tex2").value;
-  var tex3 = Tform.querySelector("#tex3").value;
-  var tex4 = Tform.querySelector("#tex4").value;
-  var tex5 = Tform.querySelector("#tex5").value;
-  var  experties = [tex1,tex2,tex3,tex4,tex5]
+  
+
+ 
+ let tex1 = Tform.querySelector("#tex1");
+ let tex2 = Tform.querySelector("#tex2");
+ let tex3 = Tform.querySelector("#tex3");
+ let tex4 = Tform.querySelector("#tex4");
+ let tex5 = Tform.querySelector("#tex5");
+
+
+let val =[]
+ if(tex1.checked === true){
+    val.push(tex1.value)
+ }
+ if(tex2.checked === true){
+  val.push(tex2.value)
+}
+if(tex3.checked === true){
+  val.push(tex3.value)
+}
+if(tex4.checked === true){
+  val.push(tex4.value)
+}
+if(tex5.checked === true){
+  val.push(tex5.value)
+}
+
+
+let  expertise = val
 
   let address = {
     city,
@@ -127,7 +157,7 @@ Tform.addEventListener("submit", async function (event) {
     qualification:qualification,
     experience: experience,
     address: address,
-    experties: experties
+    expertise: expertise
   };
   console.log(data)
 
@@ -140,6 +170,13 @@ Tform.addEventListener("submit", async function (event) {
    })
    const response = await res.json();
    console.log(response);
+   if(response.msg === "details added"){
+      window.location.href = "signup.html"
+  }
+  else{
+    alert(response.msg)
+  }
+    
 });
 
 
@@ -155,21 +192,39 @@ Sform.addEventListener("submit", async function (event) {
   event.preventDefault();
 
   //   Get the values of the input fields
-  var city = Sform.querySelector("#tcity1").value;
-  var state = Sform.querySelector("#tstate1").value;
-  var pincode = Sform.querySelector("#tpin1").value;
-  var phoneNumber =Sform.querySelector('#Mobile1').value;
-  var gender = Sform.querySelector("#tgen1").value;
-  var standard = Sform.querySelector("#standard").value
+ let city = Sform.querySelector("#tcity1").value;
+ let state = Sform.querySelector("#tstate1").value;
+ let pincode = Sform.querySelector("#tpin1").value;
+ let phoneNumber =Sform.querySelector('#Mobile1').value;
+ let gender = Sform.querySelector("#tgen1").value;
+ let standard = Sform.querySelector("#standard").value
 
-  var tex1 = Sform.querySelector("#tex11").value;
-  var tex2 = Sform.querySelector("#tex22").value;
-  var tex3 = Sform.querySelector("#tex33").value;
-  var tex4 = Sform.querySelector("#tex44").value;
-  var tex5 = Sform.querySelector("#tex55").value;
+ let tex11 = Sform.querySelector("#tex11");
+ let tex22 = Sform.querySelector("#tex22");
+ let tex33 = Sform.querySelector("#tex33");
+ let tex44 = Sform.querySelector("#tex44");
+ let tex55 = Sform.querySelector("#tex55");
 
-  var  subjects = [tex1,tex2,tex3,tex4,tex5]
 
+ let val =[]
+ if(tex11.checked === true){
+    val.push(tex11.value)
+ }
+ if(tex22.checked === true){
+  val.push(tex22.value)
+}
+if(tex33.checked === true){
+  val.push(tex33.value)
+}
+if(tex44.checked === true){
+  val.push(tex44.value)
+}
+if(tex55.checked === true){
+  val.push(tex55.value)
+}
+
+let  subjects = val
+console.log(val)
   let address = {
     city,
     state,
@@ -184,6 +239,7 @@ Sform.addEventListener("submit", async function (event) {
     address: address
   };
 
+  console.log(data)
   const sd="http://localhost:9090/scheduler/student/addDetails"
 
   console.log(data)
@@ -195,13 +251,15 @@ Sform.addEventListener("submit", async function (event) {
    const response = await res.json();
    console.log(response);
 
+   if(response.msg === "details added"){
+      window.location.href = "signup.html"
+    }
+    else{
+      alert(response.msg)
+    }
+
 });
 
 
 
-links.forEach((link) => {
-  link.addEventListener("click", () => {
-    //preventing form submit
-    forms.classList.toggle("show-signup");
-  });
-});
+
