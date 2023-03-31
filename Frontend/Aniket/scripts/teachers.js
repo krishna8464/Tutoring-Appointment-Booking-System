@@ -1,9 +1,10 @@
-const url = `http://localhost:3000/teachers`;
+const url = `http://localhost:9090/scheduler/teacher/getAllTeacher`;
 
 const getData = async () => {
   let response = await fetch(url);
   let data = await response.json();
   append(data);
+  // console.log(data);
 };
 
 let mainDiv = document.getElementById("packageDiv");
@@ -22,15 +23,15 @@ const append = (data) => {
 
 
     let title = document.createElement("h4");
-    title.innerText = el.name;
+    title.innerText = el.teacherDetail.name;
 
     let priceDiv = document.createElement("div");
     priceDiv.className = "price";
 
     let education = document.createElement("p");
-    education.innerHTML = "<b>EDUCATION:</b>" + " " + el.education;
+    education.innerHTML = "<b>EDUCATION:</b>" + " " + el.qualification;
     let sub = document.createElement("p");
-    sub.innerHTML = "<b>SUBJECTS:</b>" + " " + el.subject;
+    sub.innerHTML = "<b>SUBJECTS:</b>" + " " + el.expertise.join(" ");
   
     priceDiv.append(education,sub)
 
