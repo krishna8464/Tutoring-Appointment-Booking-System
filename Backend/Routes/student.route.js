@@ -48,6 +48,38 @@ StudentRouter.get('/allStudents',async (req,res)=>{
     res.send(Students)
 })
 
+
+StudentRouter.patch("/update/TeacherDetails",authenticate, async(req,res)=>{
+    const id  = req.body.userid ;
+    const data = req.body
+    console.log(data)
+    try{
+        let filter = {_id:id}
+        await StudentModel.findOneAndUpdate(filter,data)
+        res.send("data updated")
+    }
+    catch(err){
+        res.send(err)
+    }
+   
+})
+
+
+StudentRouter.delete("/delete/TeacherDetails",authenticate, async(req,res)=>{
+    const id  = req.body.userid ;
+    try{
+        await StudentModel.findOneAndDelete(id)
+        res.send("app deleted")
+    }
+    catch(err){
+        res.send(err)
+    }
+        
+})
+
+
+
+
 module.exports = {StudentRouter}
 
 

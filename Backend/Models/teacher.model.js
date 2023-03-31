@@ -2,6 +2,7 @@ const mongoose = require("mongoose")
 
 
 const teacherSchema  =  mongoose.Schema({
+    //Teacher_id: String,
     teacherDetail:{
         teacherId:String,
         name:String,
