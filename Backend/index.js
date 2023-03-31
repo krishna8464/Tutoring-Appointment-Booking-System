@@ -1,17 +1,17 @@
 // import packages
-
 const express = require("express");
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 var cookieParser = require('cookie-parser')
+const morgan =  require("morgan")
 
 const {passport}=require('./Config/googleAuth')
 
 
 const app = express();
 
-
+app.use(morgan("dev"))
 app.use(express.json())
 app.use(cors({
     origin: '*'
@@ -41,7 +41,7 @@ const {TeacherRouter} = require('./Routes/teacher.route')
 
 //Api End points
 app.use('/userRoutes',UserRouter)
-app.use("/scheduler/student",authenticate,StudentRouter)
+app.use("/scheduler/student",StudentRouter)
 app.use("/scheduler/teacher",TeacherRouter)
 
 
@@ -49,6 +49,8 @@ app.use("/scheduler/teacher",TeacherRouter)
 app.get("/",(req,res)=>{
     res.send("ok")
 })
+
+
 
 //googleAuth
 app.get('/auth/google',
