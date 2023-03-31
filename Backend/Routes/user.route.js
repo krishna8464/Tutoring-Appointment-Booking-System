@@ -20,7 +20,8 @@ const UserRouter = express.Router()
 
 UserRouter.use(cookieParser())
 
-const {validate} = require('../middlewares/signup_validate')
+const {validate} = require('../middlewares/signup_validate');
+const { TeacherModel } = require('../Models/teacher.model');
 
 
 
@@ -37,12 +38,15 @@ UserRouter.post('/signup',validate, async (req, res) => {
                 try {
 
                     let userId = Math.ceil(Math.random() * 10000)
-
-                    const signupToken = jwt.sign({userid: userId,email:email,name:name}, process.env.Signup_pass)
-                    redis.set('signupToken',signupToken)
-
                     const user= new UserModel({ email, password: hash, name, avatar,isActive,isAdmin })
                     await  user.save()
+
+
+                    let u = await UserModel.findOne({email})
+                    console.log(u._id,"hi")
+
+                    const signupToken = jwt.sign({userid:u._id,email:email,name:name}, process.env.Signup_pass)
+                    redis.set('signupToken',signupToken)
 
 
                     let userName = name
@@ -112,7 +116,19 @@ UserRouter.post('/signup',validate, async (req, res) => {
 UserRouter.post('/login', async (req, res) => {
     const { email, password } = req.body;
     const user = await UserModel.findOne({ email });
-    //console.log(user)
+    const teacher =  await TeacherModel.find({})
+    let status  = false
+    let u 
+    for(let i=0;i<teacher.length;i++){
+        let ele = teacher[i]
+        if(ele.teacherDetail.email==email){
+            u = ele._id 
+            status = true
+             break      
+        }
+    }
+    console.log(u)
+
    
     if (user) {
         try {
@@ -122,7 +138,7 @@ UserRouter.post('/login', async (req, res) => {
                     res.status(500).send({ 'msg': "Something went wrong" })
                 }
                 else if (result) {
-                    const token = jwt.sign({ userid: user._id,email:user.email,isAdmin:user.isAdmin,name:user.name,email:user.email }, process.env.Token_Pass, { expiresIn: '5d' })
+                    const token = jwt.sign({userid:u,email:user.email,isAdmin:user.isAdmin,name:user.name,email:user.email }, process.env.Token_Pass, { expiresIn: '5d' })
 
                     let update = {isActive:true}
                     let filter = {email:email}

@@ -5,7 +5,7 @@ require('dotenv').config()
 const Redis = require('ioredis');
 
 const {TeacherModel}=require('../Models/teacher.model');
-const {authenticate} = require('../middlewares/Authentication')
+const {authenticate} = require('../middlewares/AdminAuthentication')
 const { UserModel} = require('../Models/User.model')
 
 
@@ -18,9 +18,11 @@ const redis = new Redis({
 const TeacherRouter = express.Router()
 TeacherRouter.use(cookieParser())
 
+
+//add new teachers
+
 TeacherRouter.post("/addDetails",async(req,res)=>{
     const SignUpToken = await redis.get('signupToken')
-    //console.log(SignUpToken)
     const { mobile,gender,address,qualification,experience,expertise} = req.body
   
     jwt.verify(SignUpToken,process.env.Signup_pass,async function(err,decoded){
@@ -47,11 +49,44 @@ TeacherRouter.post("/addDetails",async(req,res)=>{
     })
 })
 
+
+
 //get All Teacher Details
 TeacherRouter.get("/getAllTeacher",async(req,res)=>{
     const Teachers = await TeacherModel.find()
     res.send(Teachers)
 })
+
+
+TeacherRouter.patch("/update/TeacherDetails",authenticate, async(req,res)=>{
+    const id  = req.body.userid ;
+    const data = req.body
+    console.log(data)
+    try{
+        let filter = {_id:id}
+        await TeacherModel.findOneAndUpdate(filter,data)
+        res.send("data updated")
+    }
+    catch(err){
+        res.send(err)
+    }
+   
+})
+
+
+TeacherRouter.delete("/delete/TeacherDetails",authenticate, async(req,res)=>{
+    const id  = req.body.userid ;
+    try{
+        await TeacherModel.findOneAndDelete(id)
+        res.send("app deleted")
+    }
+    catch(err){
+        res.send(err)
+    }
+        
+})
+
+
 
 
 module.exports = {TeacherRouter}

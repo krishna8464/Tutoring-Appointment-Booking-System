@@ -27,9 +27,6 @@ const {UserModel} = require('./Models/User.model')
 const {StudentModel}= require("./Models/student.model")
 
 
-//middleware
-const {authenticate} = require('./middlewares/Authentication')
-const {validate} = require('./middlewares/signup_validate')
 
 
 // import Routes
