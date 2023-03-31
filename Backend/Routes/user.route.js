@@ -22,6 +22,8 @@ UserRouter.use(cookieParser())
 
 const {validate} = require('../middlewares/signup_validate');
 const { TeacherModel } = require('../Models/teacher.model');
+const {StudentModel} = require("../Models/student.model")
+
 
 
 
@@ -116,18 +118,28 @@ UserRouter.post('/signup',validate, async (req, res) => {
 UserRouter.post('/login', async (req, res) => {
     const { email, password } = req.body;
     const user = await UserModel.findOne({ email });
-    const teacher =  await TeacherModel.find({})
-    let status  = false
+    const teacher =  await TeacherModel.find({});
+    const student = await StudentModel.find({'studentDetail.email': email})
+    
     let u 
+    let stats  = false
+    let userdetials 
     for(let i=0;i<teacher.length;i++){
         let ele = teacher[i]
         if(ele.teacherDetail.email==email){
             u = ele._id 
-            status = true
+            stats = true
+            userdetials=ele
              break      
         }
     }
-    console.log(u)
+    if(stats===false){
+        userdetials=student
+    }
+
+
+    // console.log(u)
+    console.log(student)
 
    
     if (user) {
@@ -146,7 +158,7 @@ UserRouter.post('/login', async (req, res) => {
 
                     res.cookie("token",token,{httpOnly:true})
                     res.setHeader("token",token)
-                    res.status(201).send({"msg":"Login successfull","username":user.name,"userEmail":user.email })
+                    res.status(201).send({"msg":"Login successfull","username":user.name,"userEmail":user.email,"userdet":user,"extdet":userdetials })
                 }
                 else {
                     res.send({ 'msg': "incorrect password" })
