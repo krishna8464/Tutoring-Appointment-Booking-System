@@ -12,7 +12,7 @@
 }
 #title>div{
     margin: auto;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     width: 15%;
 }
 #title>div >h1{
@@ -20,7 +20,7 @@
     color: white;
 }
 #top > div{
-  border: 2px solid red;
+  /* border: 2px solid red; */
   width: 50%;
 }
 #top{
@@ -30,23 +30,33 @@
     flex-direction: row;
     gap: 20px;
     height: 50vh;
-    border: 2px solid teal;
-  
+    /* border: 2px solid teal; */
+   margin-top: 40px;
 }
 #top img{
     width: 100%;
 }
 .ttt{
- width: 60%;
+ width: 80%;
+ /* border: 2px solid black; */
+ font-size: 21px;
+ color: rgb(98, 98, 98);
+ text-align: center;
 }
 .para{
  width: 70%;
+ /* border: 2px solid red; */
+ font-size: 20px;
+ text-align: center;
 }
 #textClass{
-    display: f;
-    padding: 50px;
+    display: flex;
+    /* padding: 50px; */
     align-items: center;
+    flex-direction: column;
     gap: 20px;
+    align-items: center;
+    justify-content: center;
 }
 #form{
     display: flex;
@@ -54,7 +64,7 @@
     width: 80%;
     margin: auto;
     gap: 50px;
-    margin-top: 70px;
+    margin-top: 80px;
 }
 
 .fDetails{
@@ -79,3 +89,83 @@ span{
     margin-bottom: 5px;
     color: rgb(86, 86, 86);
 }
+#getBtn:hover{
+    cursor: pointer;
+    background-color: #ff7f23;
+}
+#getBtn{
+    padding: 13px 28px;
+    background-color: #F07922;
+    color: #fff;
+    font-size: 19px;
+    border: none;
+    margin-bottom: 40px;
+    border-radius: 5px;
+}
+@media only screen and (max-width: 600px) {
+    #top{
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+height: 100vh;
+      
+       margin-top: 20px;
+    }
+    #title>div{
+        margin: auto;
+        width: 50%;
+        text-align: center;
+    }
+    #title>div >h1{
+        font-size: 26px
+    }
+    #top > div{
+      width: 100%;
+    }
+
+    #form{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin: auto;
+        gap: 50px;
+        margin-top: -120px;
+    }
+    
+    .fDetails{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .input{
+        width: 100%;
+        background-color: rgb(231, 231, 231);
+        height: 35px;
+        font-size: 17px;
+        border: none;
+    }
+    
+    span{
+        color: red;
+    }
+    .p{
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 5px;
+        color: rgb(86, 86, 86);
+    }
+
+    .ttt{
+        /* border: 2px solid red; */
+        font-size: 16px;
+        text-align: center;
+        width: 90%;
+       }
+    .para{
+        width: 70%;
+        /* border: 2px solid red; */
+        font-size: 17px;
+        text-align: center;
+       }
+  }
