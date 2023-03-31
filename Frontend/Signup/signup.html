@@ -26,12 +26,24 @@
               <form action="# " id="TeacherDetails">
                 <div class="user-details">
                   <div class="input-box">
-                    <span class="details">Full Name</span>
-                    <input type="text" placeholder="Enter your name" id="tname" required>
+                    <span class="details">Phone Number</span>
+                    <input type="text" placeholder="Enter Phone No." id="Mobile" required >
+                  </div>
+                  <div class="input-box">
+                    <span class="details">Gender</span>
+                    <select name="tgen " id="tgen" >
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                       </select>
                   </div>
                   <div class="input-box">
                     <span class="details">Qualification</span>
-                    <input type="text" placeholder="Enter your Qualification" id="tquali" required>
+                    <input type="text" placeholder="Qualification" id="Qualification" required >
+                  </div>
+                  <div class="input-box">
+                    <span class="details">Experience</span>
+                    <input type="text" placeholder="Enter your Experience" id="Experience" required>
                   </div>
                   <div class="input-box">
                     <span class="details">City</span>
@@ -47,33 +59,36 @@
                     <span class="details">Pincode</span>
                     <input type="number" placeholder="Enter Pincode" id="tpin" required>
                   </div>
-                  <div class="input-box">
-                    <span class="details">Experience</span>
-                    <input type="text" placeholder="Experience" id="exp" required>
-                  </div>
-
-                  <!-- <div class="input-box">
-                    <span class="details">Phone Number</span>
-                    <input type="text" placeholder="Enter your number" id="tnum" >
-                  </div> -->
-                  <div class="input-box">
+                
+                  <div class="input-box" >
                     <span class="details">Experties</span>
-                    <input type="text" placeholder="Experties" id="tex" required>
-                  </div>
-                
-                  <div class="input-box">
-                    <span class="details">Gender</span>
-                    <select name="tgen " id="tgen" >
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
-                       </select>
-                </div>
+                    <div style="display: grid; grid-template-columns: repeat(2,1fr); border: 1px solid #ccc;border-bottom-width: 2px;border-color: #9b59b6; padding: 5px 5px 5px 8px; border-radius: 8px; "> 
+                        <div style="display: flex;align-items: center;" >
+                          <label for="">Maths</label>
+                          <input type="checkbox" placeholder="Maths" id="tex1" value="Maths" style="width: 8%; margin-left: 5%; "  >
+                        </div>
+                        <div style="display: flex;align-items: center;">
+                          <label for="">English</label>
+                          <input type="checkbox" placeholder="Maths" id="tex2" value="English" style="width: 8%; margin-left: 5%; ">
+                        </div>
+                        <div style="display: flex;align-items: center;" >
+                          <label for="">Science</label>
+                          <input type="checkbox" placeholder="Maths" id="tex3" value="Science" style="width: 8%; margin-left: 5%;">
+                        </div>
+                        <div style="display: flex;align-items: center;" >
+                          <label for="">Social Studies</label>
+                          <input type="checkbox" placeholder="Maths" id="tex4" value="Social Studies" style="width: 8%; margin-left: 5%;" >
+                        </div>
+                        <div style="display: flex;align-items: center;" >
+                          <label for="">All subject</label>
+                          <input type="checkbox" placeholder="Maths" id="tex5" value="All subject" style="width: 8%; margin-left: 5%;">
+                        </div>
+                        </div>
+                        
+                  </div>  
           
                 </div>
           
-          
-              
                 <div class="button">
                   <input type="submit" value="Submit">
                 </div>
@@ -81,69 +96,86 @@
             </div>
           </div>
           
-          <!--  tf end here  -->
+ <!--  tf end here  -->
           
-          <!-- sf start here  -->
+ 
+ <!-- sf start here  -->
+ <div class="container" id="Sf">
+  <div class="title">Student-Details</div>
+  <div class="content">
+    <form action="# " id="StudentDetails">
+      <div class="user-details">
+        <div class="input-box">
+          <span class="details">Phone Number</span>
+          <input type="text" placeholder="Enter Phone No." id="Mobile1" required >
+        </div>
+        <div class="input-box">
+          <span class="details">Gender</span>
+          <select name="tgen " id="tgen1" >
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+             </select>
+        </div>
+        <div class="input-box">
+          <span class="details">Standard</span>
+          <input type="text" placeholder="Standard" id="standard" required >
+        </div>
+        <div class="input-box">
+          <span class="details">City</span>
+          <input type="text" placeholder="Enter city name" id="tcity1" required>
+        </div>
+        
+        <div class="input-box">
+          <span class="details">State</span>
+          <input type="text" placeholder="Enter State name" id="tstate1" required>
+        </div>
 
-
-          <div class="container" id="Sf">
-            <div class="title">Student -Details</div>
-            <div class="content">
-              <form action="# " id="StudentDetails">
-                <div class="user-details">
-                  <div class="input-box">
-                    <span class="details">Full Name</span>
-                    <input type="text" placeholder="Enter your name" id="sname" required>
-                  </div>
-                  <div class="input-box">
-                    <span class="details">City</span>
-                    <input type="text" placeholder="Enter city name" id="scity" required>
-                  </div>
-                  
-                  <div class="input-box">
-                    <span class="details">State</span>
-                    <input type="text" placeholder="Enter State name" id="sstate" required>
-                  </div>
-
-                  <div class="input-box">
-                    <span class="details">Pincode</span>
-                    <input type="number" placeholder="Enter Pincode" id="spin" required>
-                  </div>
-
-                  <!-- <div class="input-box">
-                    <span class="details">Phone Number</span>
-                    <input type="text" placeholder="Enter your number" >
-                  </div> -->
-                  <div class="input-box">
-                    <span class="details">Subjects</span>
-                    <input type="text" placeholder="Subjects" id="subs" required>
-                  </div>
-                 
-                
-                 
-                
-                  <div class="input-box">
-                    <span class="details">Gender</span>
-                    <select name="sgen " id="sgen" >
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
-                       </select>
-                </div>
-          
-                </div>
-          
-          
+        <div class="input-box">
+          <span class="details">Pincode</span>
+          <input type="number" placeholder="Enter Pincode" id="tpin1" required>
+        </div>
+      
+        <div class="input-box" >
+          <span class="details">Subjects</span>
+          <div style="display: grid; grid-template-columns: repeat(2,1fr); border: 1px solid #ccc;border-bottom-width: 2px;border-color: #9b59b6; padding: 5px 5px 5px 8px; border-radius: 8px; "> 
+              <div style="display: flex;align-items: center;" >
+                <label for="">Maths</label>
+                <input type="checkbox" placeholder="Maths" id="tex11" value="Maths" style="width: 8%; margin-left: 5%; "  >
+              </div>
+              <div style="display: flex;align-items: center;">
+                <label for="">English</label>
+                <input type="checkbox" placeholder="Maths" id="tex22" value="English" style="width: 8%; margin-left: 5%; ">
+              </div>
+              <div style="display: flex;align-items: center;" >
+                <label for="">Science</label>
+                <input type="checkbox" placeholder="Maths" id="tex33" value="Science" style="width: 8%; margin-left: 5%;">
+              </div>
+              <div style="display: flex;align-items: center;" >
+                <label for="">Social Studies</label>
+                <input type="checkbox" placeholder="Maths" id="tex44" value="Social Studies" style="width: 8%; margin-left: 5%;" >
+              </div>
+              <div style="display: flex;align-items: center;" >
+                <label for="">All subject</label>
+                <input type="checkbox" placeholder="Maths" id="tex55" value="All subject" style="width: 8%; margin-left: 5%;">
+              </div>
+              </div>
               
-                <div class="button">
-                  <input type="submit" value="Submit">
-                </div>
-              </form>
-            </div>
-          </div>
-          
+        </div>  
+
+      </div>
+
+      <div class="button">
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+  </div>
+</div>
+        
 <!-- sf end here  -->
 
+
+<!-- login -->
         <section class="container forms" id="nf">
             <div class="form login">
                 <div class="form-content">
@@ -185,32 +217,34 @@
 
             </div>
 
+
             <!-- Signup Form -->
 
             <div class="form signup">
                 <div class="form-content">
                     <header>Signup</header>
                     <form action="#" id="Sform">
-                     
+                        <div class="field input-field">
+                          <input type="text" placeholder="Full Name" class="name" required>
+                      </div>
 
                         <div class="field input-field">
-                            <input type="email" placeholder="Email" class="input">
+                            <input type="email" placeholder="Email" class="email" required>
                         </div>
 
                         <div class="field input-field">
-                            <input type="password" placeholder="Create password" class="password">
+                            <input type="password" placeholder="Create password" class="password" required>
                         </div>
 
                        
                         
                         <select name="role " id="role" >
-                            <option value="">Posigition</option>
+                            <option value="">Position</option>
                             <option value="student">Student</option>
                             <option value="teacher">Teacher</option>
                            </select>
 
                         
-                         <button id="signup"></button>
                         
                     </form>
                  

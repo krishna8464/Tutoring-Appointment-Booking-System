@@ -7,6 +7,8 @@ const teacherSchema  =  mongoose.Schema({
         name:String,
         email:String,
     },
+    mobile:Number,
+    gender:String,
     address:{
         city:String,
         state:String,

@@ -7,6 +7,13 @@ var cookieParser = require('cookie-parser')
 const Redis = require('ioredis');
 
 
+const redis = new Redis({
+    port: 14080,
+    host: process.env.redish_host,
+    password: process.env.redish_password
+})
+
+
 const {UserModel}=require('../Models/User.model');
 
 const UserRouter = express.Router()
@@ -14,6 +21,8 @@ const UserRouter = express.Router()
 UserRouter.use(cookieParser())
 
 const {validate} = require('../middlewares/signup_validate')
+
+
 
 //signup
 UserRouter.post('/signup',validate, async (req, res) => {
@@ -26,8 +35,16 @@ UserRouter.post('/signup',validate, async (req, res) => {
             }
             else {
                 try {
+
+                    let userId = Math.ceil(Math.random() * 10000)
+
+                    const signupToken = jwt.sign({userid: userId,email:email,name:name}, process.env.Signup_pass)
+                    redis.set('signupToken',signupToken)
+
                     const user= new UserModel({ email, password: hash, name, avatar,isActive,isAdmin })
                     await  user.save()
+
+
                     let userName = name
                     const transporter = nodemailer.createTransport({
                         service: 'gmail',
@@ -76,6 +93,7 @@ UserRouter.post('/signup',validate, async (req, res) => {
                         }
                     })
                 }
+
                 catch (err) {
                     console.log(err);
                     res.status(401).send({ "msg": "Something went wrong" })
@@ -94,7 +112,7 @@ UserRouter.post('/signup',validate, async (req, res) => {
 UserRouter.post('/login', async (req, res) => {
     const { email, password } = req.body;
     const user = await UserModel.findOne({ email });
-    console.log(user)
+    //console.log(user)
    
     if (user) {
         try {
