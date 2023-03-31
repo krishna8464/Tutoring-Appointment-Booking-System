@@ -1,3 +1,5 @@
+// const { json } = require("body-parser");
+
 // code for change form start here
 const forms = document.querySelector(".forms");
 let links = document.querySelectorAll(".link");
@@ -7,7 +9,8 @@ let links = document.querySelectorAll(".link");
 const form = document.querySelector("#Sform"); // select the form element
 
 links.forEach((link) => {
-  link.addEventListener("click", () => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault()
     //preventing form submit
     forms.classList.toggle("show-signup");
   });
@@ -85,14 +88,16 @@ Loginbutton.addEventListener("click", async () => {
     body: JSON.stringify(data)
   });
   const response = await res.json();
+  sessionStorage.setItem("Userdetials",JSON.stringify(response));
+  sessionStorage.setItem("status", "true")
+
   if(response.msg === "Login successfull"){
       window.location.href = "index.html"
   }
   else{
     alert(response.msg)
   }
- 
-  console.log(response);
+  // console.log(response);
 });
 
 
@@ -141,6 +146,8 @@ if(tex4.checked === true){
 if(tex5.checked === true){
   val.push(tex5.value)
 }
+
+
 
 
 let  expertise = val
