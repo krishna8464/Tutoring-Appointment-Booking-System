@@ -1,7 +1,6 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -25,5 +24,6 @@
     "passport": "^0.6.0",
     "passport-google-oauth20": "^2.0.0",
     "uuid": "^9.0.0"
-  }
+  },
+  "description": ""
 }
