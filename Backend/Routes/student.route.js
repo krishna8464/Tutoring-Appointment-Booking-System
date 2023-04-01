@@ -17,6 +17,9 @@ const {UserModel} = require('../Models/User.model')
 const StudentRouter = express.Router()
 StudentRouter.use(cookieParser())
 
+
+
+//Add details
 StudentRouter.post("/addDetails",async(req,res)=>{   
     const SignUpToken = await redis.get('signupToken')
     console.log(SignUpToken)
@@ -45,12 +48,14 @@ StudentRouter.post("/addDetails",async(req,res)=>{
 })
 
 
+//get all student
 StudentRouter.get('/allStudents',async (req,res)=>{
     const Students = await TeacherModel.find()
     res.send(Students)
 })
 
 
+//update student
 StudentRouter.patch("/update/studentDetails",authenticate, async(req,res)=>{
     const id  = req.body.userid ;
     const data = req.body
@@ -67,6 +72,7 @@ StudentRouter.patch("/update/studentDetails",authenticate, async(req,res)=>{
 })
 
 
+//delete student
 StudentRouter.delete("/delete/StudentDetails",authenticate, async(req,res)=>{
     const id  = req.body.userid ;
     try{
