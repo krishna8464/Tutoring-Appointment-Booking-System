@@ -89,7 +89,7 @@ Loginbutton.addEventListener("click", async () => {
   });
   const response = await res.json();
   sessionStorage.setItem("Userdetials",JSON.stringify(response));
-  sessionStorage.setItem("status", "true")
+  sessionStorage.setItem("status", true)
 
   if(response.msg === "Login successfull"){
       window.location.href = "index.html"
