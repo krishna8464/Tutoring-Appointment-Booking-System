@@ -6,33 +6,28 @@ require("dotenv").config();
 var cookieParser = require('cookie-parser')
 const morgan =  require("morgan")
 
-const {passport}=require('./Config/googleAuth')
-
-
 const app = express();
 
-app.use(morgan("dev"))
+//packages use
 app.use(express.json())
+app.use(morgan("dev"))
 app.use(cors({
     origin: '*'
 }))
 app.use(cookieParser())
 
+
 //import connection
 const {connection}  = require("./Config/db")
 
 
-//import models
-const {UserModel} = require('./Models/User.model')
-const {StudentModel}= require("./Models/student.model")
-
-
-
 
 // import Routes
+const {passport}=require('./Config/googleAuth')
 const {UserRouter} = require('./Routes/user.route')
 const {StudentRouter} = require('./Routes/student.route')
 const {TeacherRouter} = require('./Routes/teacher.route')
+const {FeedbackRouter} = require("./Routes/feedback.route")
 
 
 
@@ -40,6 +35,7 @@ const {TeacherRouter} = require('./Routes/teacher.route')
 app.use('/userRoutes',UserRouter)
 app.use("/scheduler/student",StudentRouter)
 app.use("/scheduler/teacher",TeacherRouter)
+app.use("/feedback",FeedbackRouter)
 
 
 

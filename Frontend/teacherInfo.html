@@ -105,7 +105,7 @@
       </nav>
 
       <div id="tutor-name">
-        <h1 id="tutor-heading">BIRENDRA</h1>
+        <h1 id="tutor-heading">Meet Helena Eitel</h1>
       </div>
 
       <div>
@@ -124,11 +124,11 @@
           <div id="eduction-detal">
             <br />
             <strong>Education :</strong>
-            <span id="set-eductaion">set Education</span>
+            <span id="set-eductaion"><strong>M.sc(Maths),Exprience :6years</strong> </span>
             <br />
             <br />
             <strong>Expertise :</strong>
-            <span id="set-expertise">set-expertise</span>
+            <span id="set-expertise"><strong>Maths, Biology</strong></span>
           </div>
         </div>
         <div id="det-right">
@@ -199,11 +199,16 @@
      </div>
   </body>
 </html>
+
+
+
 <script>
   let URL = window.location.href.split("/");
   const finalUrl = URL.slice(8);
-  console.log(finalUrl);
-
+  let url_set=document.querySelector("#url-set");
+  let res_set="";
+ 
+url_set.innerText=res_set;
   //   for sliding
   const tabs = document.querySelectorAll("[data-tab-value]");
   const tabInfos = document.querySelectorAll("[data-tab-info]");
