@@ -4,6 +4,8 @@ const express = require('express');
 const {Feedback} = require('../Models/feedback.model');
 const FeedbackRouter = express.Router();
 
+
+//Post feedback
 FeedbackRouter.post('/StudentFeedback', async (req, res) => {
   try {
     const {name,email,message} = req.body;
@@ -17,6 +19,7 @@ FeedbackRouter.post('/StudentFeedback', async (req, res) => {
 });
 
 
+//all feedback
 FeedbackRouter.get("/allFeedback", async(req,res)=>{
     try{
         const feed= await Feedback.find()
