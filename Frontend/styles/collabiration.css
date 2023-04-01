@@ -1,0 +1,469 @@
+/* nav bar code starts */
+
+#nav {
+    width: 100%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 19px 3px;
+  }
+  body {
+    font-family: "Chewy";
+  }
+  
+  #logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Chewy";
+    font-size: 22px;
+    color: black;
+  }
+  
+  #divcont {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #navelemetns {
+    display: flex;
+    color: black;
+  }
+  #navelemetns > div {
+    margin-right: 20px;
+    font-size: 17px;
+  }
+  #navelemetns > div:hover {
+    color: #f07922;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-position: under;
+    text-decoration-color: #f07922;
+    font-style: bold;
+  }
+  
+  #contdiv > img {
+    margin-right: 5px;
+  }
+  
+  @media screen and (min-width: 1240px) and (max-width: 1080px) {
+    #contdiv {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  
+  @media screen and (min-width: 0px) and (max-width: 995px) {
+    #navelemetns {
+      flex-direction: column;
+    }
+  }
+
+/* nav bar code ends */
+
+/* top cont code starts */
+#topcont>div>img{
+    height: 100%;
+    width: 100%;
+}
+
+@media screen and (min-width:50px) and (max-width:338px) {
+    #nav{
+        position: relative;
+        width: 100%;
+    }
+}
+
+#serach{
+    /* color: #F07922; */
+    border-color: #F07922;
+    
+}
+#serach:hover{
+    background-color: #f07922;
+    border-color: #f07922;
+}
+
+#subdivs{
+    display: grid;
+    grid-template-columns: repeat(4,1fr) ;
+    width: 60%;
+    height: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: -100px;
+    
+
+}
+
+#subdivs>div{
+    padding: 15px;
+    height: auto;
+    position: relative;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 100%;
+    cursor: pointer;
+    /* max-width: fit-content; */
+}
+
+#subdivs>div:hover{
+    margin-top: -50px;
+}
+
+#subdivs>div>div{
+    padding: 10px;
+}
+#subdivs>div>div>img:nth-child(1){
+    color: #fff;
+}
+
+#subdivs>div>div:nth-child(2){
+    font-weight: 900;
+}
+
+#subdivs>div:nth-child(1){
+    background-color: #f07922;
+    color: #fff;
+    height: 300px;
+    padding: 10px;
+    
+}
+#subdivs>div:nth-child(2){
+    background-color: #457992;
+    color: #fff;
+    height: 250px;
+    padding: 10px;
+}
+#subdivs>div:nth-child(3){
+    background-color: #f0a822;
+    color: #fff;
+    height: 300px;
+    padding: 10px;
+}
+#subdivs>div:nth-child(4){
+    background-color: #004566;
+    color: #fff;
+    height: 250px;
+    padding: 10px;
+}
+
+
+
+.imgs{
+    width: 60px;
+    height: 60px;
+    color: #fff;
+}
+
+@media screen and (min-width:1000px) and (max-width:1242px) {
+    #subdivs{
+        width: 80%;
+    }
+    #subdivs>div:hover{
+        margin-top: -50px;
+    }
+}
+
+@media screen and (min-width:950px) and (max-width:1000px) {
+    #subdivs{
+        width: 90%;
+    }
+    #subdivs>div:hover{
+        margin-top: -50px;
+    }
+}
+
+@media screen and (min-width:760px) and (max-width:950px) {
+    #subdivs{
+        width: 100%;
+    }
+    #subdivs>div:hover{
+        margin-top: -50px;
+    }
+}
+
+@media screen and (min-width:50px) and (max-width:825px) {
+    #subdivs{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        position: static;
+        margin-top: 50px;
+    }
+    #subdivs>div{
+        position: static;
+        /* max-width: fit-content; */
+    }
+    #subdivs>div:hover{
+        margin-top: -50px;
+    }
+}
+
+
+/* top cont code ends */
+
+
+
+/* nav bar code ends */
+
+
+*{
+ margin: 0;
+ padding: 0; 
+ font-family: axiforma-regular, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;  
+}
+
+#title{
+    background-color: #F07922;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+#title>div{
+    margin: auto;
+    /* border: 2px solid red; */
+    width: 50%;
+    text-align: center;
+}
+#title>div >h1{
+    font-size: 46px;
+    color: white;
+}
+#top > div{
+  /* border: 2px solid red; */
+  width: 50%;
+}
+#top{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    height: 50vh;
+    /* border: 2px solid teal; */
+   margin-top: 40px;
+}
+#top img{
+    width: 100%;
+}
+.ttt{
+ width: 80%;
+ /* border: 2px solid black; */
+ font-size: 21px;
+ color: rgb(98, 98, 98);
+ text-align: center;
+}
+.para{
+ width: 70%;
+ /* border: 2px solid red; */
+ font-size: 20px;
+ text-align: center;
+}
+#textClass{
+    display: flex;
+    /* padding: 50px; */
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+#form{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    gap: 50px;
+    margin-top: 80px;
+}
+
+.fDetails{
+    display: flex;
+    flex-direction: column;
+}
+
+.input{
+    width: 100%;
+    background-color: rgb(231, 231, 231);
+    height: 42px;
+    font-size: 17px;
+    border: none;
+}
+
+span{
+    color: red;
+}
+.p{
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: rgb(86, 86, 86);
+}
+#getBtn:hover{
+    cursor: pointer;
+    background-color: #ff7f23;
+}
+#getBtn{
+    padding: 13px 28px;
+    background-color: #F07922;
+    color: #fff;
+    font-size: 19px;
+    border: none;
+    margin-bottom: 40px;
+    border-radius: 5px;
+}
+@media only screen and (max-width: 800px) {
+    #top{
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+height: 100vh;
+      
+       margin-top: 20px;
+    }
+    #title>div{
+        margin: auto;
+        width: 50%;
+        text-align: center;
+    }
+    #title>div >h1{
+        font-size: 26px
+    }
+    #top > div{
+      width: 100%;
+    }
+
+    #form{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin: auto;
+        gap: 50px;
+        margin-top: -120px;
+    }
+    
+    .fDetails{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .input{
+        width: 100%;
+        background-color: rgb(231, 231, 231);
+        height: 35px;
+        font-size: 17px;
+        border: none;
+    }
+    
+    span{
+        color: red;
+    }
+    .p{
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 5px;
+        color: rgb(86, 86, 86);
+    }
+
+    .ttt{
+        /* border: 2px solid red; */
+        font-size: 16px;
+        text-align: center;
+        width: 90%;
+       }
+    .para{
+        width: 80%;
+        /* border: 2px solid red; */
+        font-size: 17px;
+        text-align: center;
+       }
+  }
+
+
+
+  /* Footer code starts */
+#footer>div{
+    /* margin-top: 250px; */
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+#footer>div>div{
+    display: flex;
+}
+
+
+#footer>div{
+    background-color: #004566;
+    width: 100%;
+    padding: 15px 10px 15px 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#footer>div>div>div{
+    margin-right: 15px;
+}
+
+.sty{
+   text-decoration: underline;
+   cursor: pointer;
+}
+
+.sty:hover{
+    color: #f07922;
+}
+
+#seconddiv>div{
+    font-size: 15px;
+    cursor: pointer;
+
+}
+
+#seconddiv>div:nth-child(1){
+    color: #f07922;
+}
+
+#seconddiv>div:nth-child(5){
+    color: #f07922;
+}
+
+#seconddiv>div:hover{
+    color: #f07922;
+}
+
+@media all and (min-width: 585px) and (max-width: 1035px) {
+    #footer>div{
+        flex-direction: column;
+    }
+}
+
+@media all and (min-width: 317px) and (max-width: 585px) {
+    #footer>div{
+        flex-direction: row;
+    }
+    #footer>div>div{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media all and (min-width: 0px) and (max-width: 317px) {
+    #footer>div{
+        flex-direction: column;
+    }
+    #footer>div>div{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Footer code ends */

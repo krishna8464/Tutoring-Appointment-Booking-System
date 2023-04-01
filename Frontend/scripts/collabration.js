@@ -20,5 +20,3 @@ if(access === "true"){
     `
     append.innerHTML=data  
 }
-
-// don't touch the above code
