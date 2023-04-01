@@ -58,3 +58,11 @@ body{
     margin: auto;
     margin-top: 5%;
 }
+
+#logoutbtn{
+    padding: 10px;
+    font-size: 20px;
+    background-color: rgb(240, 121, 34);
+    border-radius: 10px;
+    color: white;
+}

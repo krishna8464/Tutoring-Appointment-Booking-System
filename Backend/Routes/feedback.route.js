@@ -6,8 +6,8 @@ const FeedbackRouter = express.Router();
 
 FeedbackRouter.post('/StudentFeedback', async (req, res) => {
   try {
-    const {name,email,message,date} = req.body;
-    const feedback = new Feedback({name,email,message,date})
+    const {name,email,message} = req.body;
+    const feedback = new Feedback({name,email,message})
     await feedback.save();
     res.status(201).send({"msg":"feedback added","feedback":feedback});
   } catch (err) {
