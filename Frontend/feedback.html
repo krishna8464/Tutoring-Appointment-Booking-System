@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./feedback.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="feedback_body">
+      <div id="feedback_cont">
+        <h1 id="uder_feedback_head">User Feedback, Email API for Developers</h1>
+        <p id="feed_det">
+          Deliver emails with Mailtrap Email API or SMTP from any application.
+          Monitor deliverability and share stats with the team.
+        </p>
+
+        <div>
+          <textarea
+            name="details"
+            placeholder="Put your Feedback"
+            id="typefeedback"
+            required
+          ></textarea>
+          <br />
+          <button id="Submit_Feedback">Submit Feedback</button>
+        </div>
+        <div id="alertthere"></div>
+      </div>
+      <div id="image_cont">
+        <img
+          src="https://mailtrap.io/wp-content/uploads/2022/02/sending_landing_hero_image_2.svg"
+          alt="guy with mailing system"
+        />
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  const url = "http://localhost:9090/FeedbackRoute/StudentFeedback";
+  let btn_sub = document.querySelector("#Submit_Feedback");
+  let userdata = JSON.parse(localStorage.getItem("user"));
+  console.log(userdata)
+  btn_sub.addEventListener("click", async (e) => {
+    e.preventDefault();
+    let feedcon = document.querySelector("#typefeedback").value;
+    if (feedcon.length == 0) {
+      alert("Please give your valuable feedback");
+    } else {
+      let data={};
+      data.name=userdata.Name;
+      data.email=userdata.email;
+      data.feedback=feedcon;
+      console.log(data)
+     try {
+      let res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+       
+      });
+
+      alert("Your feedback sucessfully submitted")
+     } catch (error) {
+      alert(error.message)
+     }
+      
+      // alert("Your feedback sucessfully submitted")
+    }
+  });
+</script>

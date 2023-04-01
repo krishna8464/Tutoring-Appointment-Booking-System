@@ -18,7 +18,14 @@ const teacherSchema  =  mongoose.Schema({
     qualification:String,
     experience:String,
     expertise:[String],
-    rating:String
+    rating:String,
+    slots:{
+        slot1:{type:Boolean, default:false},
+        slot2:{type:Boolean, default:false},
+        slot3:{type:Boolean, default:false},
+        slot4:{type:Boolean, default:false}
+    }
+        
 })
 
 const TeacherModel =  mongoose.model("teacher",teacherSchema)
