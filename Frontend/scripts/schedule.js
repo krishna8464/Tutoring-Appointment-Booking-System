@@ -59,7 +59,7 @@ signupBtn.addEventListener("submit", async function(event){
 
   const user = { StudentName, email, phone, courseName,Teacher_Booking_id ,slot};
   console.log(user)
-  const res = await fetch("http://localhost:9090/booking/slotBooking", {
+  const res = await fetch("https://odd-teal-caridea-tux.cyclic.app/booking/slotBooking", {
       method: "POST",
       headers: {
         "Content-type": "application/json"},

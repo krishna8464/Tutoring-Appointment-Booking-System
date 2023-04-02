@@ -49,7 +49,7 @@ async function addDetails(name, email, password) {
     return 
   }
 
-  const url = "http://localhost:9090/userRoutes/signup";
+  const url = "https://odd-teal-caridea-tux.cyclic.app/userRoutes/signup";
 
   const data = {
     name: name,
@@ -74,7 +74,7 @@ Loginbutton.addEventListener("click", async () => {
   const email = Lform.querySelector('input[type="email"]').value;
   const password = Lform.querySelector('input[type="password"]').value;
 
-  const url = "http://localhost:9090/userRoutes/login";
+  const url = "https://odd-teal-caridea-tux.cyclic.app/userRoutes/login";
 
   const data = {
     email: email,
@@ -168,7 +168,7 @@ let  expertise = val
   };
   console.log(data)
 
-  let td="http://localhost:9090/scheduler/teacher/addDetails"
+  let td="https://odd-teal-caridea-tux.cyclic.app/scheduler/teacher/addDetails"
 
   let res = await fetch(td,{
       method: 'POST',
@@ -247,7 +247,7 @@ console.log(val)
   };
 
   console.log(data)
-  const sd="http://localhost:9090/scheduler/student/addDetails"
+  const sd="https://odd-teal-caridea-tux.cyclic.app/scheduler/student/addDetails"
 
   console.log(data)
   let res = await fetch(sd,{
