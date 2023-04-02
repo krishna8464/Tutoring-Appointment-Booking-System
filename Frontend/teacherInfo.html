@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="teacher.css" />
+    <link rel="stylesheet" href="./styles/teacherinfo.css" />
 
     <!--    code by vamshi starts      -->
 
@@ -59,50 +59,35 @@
   </head>
   <body>
     <div>
-      <nav id="nav" class="navbar navbar-expand-lg bg-body-tertiary">
-        <div id="contdiv" class="container-fluid">
-          <img width="35px" height="35px" src="./images/education.png" alt="" />
-          <div id="divcont">
-            <a class="navbar-brand" href="#"
-              ><p id="logo">SCHEDULER<span>.com</span></p></a
-            >
-          </div>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarTogglerDemo02"
-            aria-controls="navbarTogglerDemo02"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span
-              ><i class="fa-solid fa-bars fa-lg" style="color: #ecb827"></i
-            ></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+        <!--                      nav started                            -->
+  <nav id="nav" class="navbar navbar-expand-lg bg-body-tertiary">
+    <div id="contdiv" class="container-fluid">
+        <img width="35px" height="35px" src="./images/education.png" alt="">
+        <!-- <div><i class="fa-sharp fa-solid fa-graduation-cap fa-flip-horizontal" style="color: #ec9822;"></i></div> -->
+      <div id="divcont"><a class="navbar-brand" href="#"><p id="logo">SCHEDULER<span>.com</span></p></a></div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span ><i class="fa-solid fa-bars fa-bounce fa-lg" style="color: #ecb827;"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        </ul>
 
-            <div id="navelemetns">
-              <div class="nav-link active" id="home" href="#">Home</div>
-              <div class="nav-link" id="partners" href="#">Partners</div>
-              <div class="nav-link" id="collaborate" href="#">Collaborate</div>
-              <div class="nav-link" id="login" href="#">Get Started</div>
-            </div>
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button id="serach" class="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
-          </div>
-        </div>
-      </nav>
+        <div id="navelemetns">
+        <div class="nav-link active" id="home" href = "#"><a style="text-decoration: none; color: black;" href="index.html">Home</a></div>
+        <div class="nav-link" id="partners" href="#"><a style="text-decoration: none; color: black;" href="#">Partners</a></div>
+        <div class="nav-link" id="collaborate" href="#"><a style="text-decoration: none; color: black;" href="collabiration.html">Collaborate</a></div>
+       
+        <div class="nav-link" id="login" href="#"><a style="text-decoration: none; color: black;" href="signup.html">Get Started</a></div>
+        <div id="appendprofile"></div>
+      </div>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button id="serach" class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!--                    nav ended                              -->
 
       <div id="tutor-name">
 
@@ -181,7 +166,8 @@
 
 
 
-    <div id="footer">
+       <!-- -----------------   Vamshi code footer starts   ---------         -->
+       <div id="footer">
         <div>
             <div>
                 <div><img width="25px" height="25px" src="./images/education.png" alt=""></div>
@@ -200,33 +186,12 @@
             </div>
         </div>
      </div>
+      <!-- -----------Vamshi code footer ends ------                ------->
   </body>
 </html>
 
 <script src="../Frontend/Aniket/scripts/schedule.js"></script>
+<script src="./scripts//teacherinto.js"></script>
 
-<script>
-  let URL = window.location.href.split("/");
-  const finalUrl = URL.slice(8);
-  let url_set=document.querySelector("#url-set");
-  let res_set="";
- 
-url_set.innerText=res_set;
-  //   for sliding
-  const tabs = document.querySelectorAll("[data-tab-value]");
-  const tabInfos = document.querySelectorAll("[data-tab-info]");
 
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      const target = document.querySelector(tab.dataset.tabValue);
-
-      tabInfos.forEach((tabInfo) => {
-        tabInfo.classList.remove("active");
-      });
-      target.classList.add("active");
-    });
-  });
-
-  // sliding end
-</script>
 

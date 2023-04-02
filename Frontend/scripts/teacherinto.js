@@ -24,6 +24,24 @@ if(access === "true"){
 // don't touch the above code
 
 
-function teacher(){
-    window.location.href="teachers.html"
-}
+
+let URL = window.location.href.split("/");
+const finalUrl = URL.slice(8);
+let url_set=document.querySelector("#url-set");
+let res_set="";
+
+url_set.innerText=res_set;
+//   for sliding
+const tabs = document.querySelectorAll("[data-tab-value]");
+const tabInfos = document.querySelectorAll("[data-tab-info]");
+
+tabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    const target = document.querySelector(tab.dataset.tabValue);
+
+    tabInfos.forEach((tabInfo) => {
+      tabInfo.classList.remove("active");
+    });
+    target.classList.add("active");
+  });
+});
