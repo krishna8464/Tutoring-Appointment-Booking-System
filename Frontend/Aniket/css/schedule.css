@@ -173,6 +173,12 @@ form>p:nth-child(2){
   width: 40%;
   /* border: 2px solid green; */
   background: #f07922;
+  padding: 80px 200px;
+  color: white;
+}
+
+#image>img{
+  width: 100%;
 }
 #rightDiv{
   width: 60%;
@@ -209,22 +215,22 @@ input{
   grid-template-columns: repeat(2,1fr);
   /* border: 2px solid red; */
   align-items:flex-start;
-  gap: 15px 0px;
+  gap: 15px 15px;
+  margin-bottom: 15px;
 }
 
 #totalSlot> div{
-  /* border: 2px solid teal; */
+  border: 2px solid #f07922;
   display: grid;
   align-items:flex-start;
-
+ align-items: center;
+ justify-content: center;
 }
 
-#totalSlot> div > button{
-  width: 80%;
-  background-color: transparent;
-  border: 3px solid var(--color-danger);
-  padding: 12px 0px;
-  border-radius: 4px;
-  font-size: 17px;
-  color: var(--color-danger);
+#totalSlot> div > input{
+  height: 40px;
+  border: 2px solid #f07922;
+  font-size: 18px;
 }
+
+
