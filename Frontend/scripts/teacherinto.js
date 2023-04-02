@@ -47,8 +47,8 @@ tabs.forEach((tab) => {
 let teacherDeta = JSON.parse(sessionStorage.getItem("teacherdet"));
 console.log(teacherDeta);
 let tutor_name = document.querySelector("#tutor-heading");
-tutor_name.innerText = teacherDeta.teacherDetail.name;
-
+tutor_name.innerText = teacherDeta.teacherDetail.name.toUpperCase();
+document.title=teacherDeta.teacherDetail.name.toUpperCase();
 let tutorimage = document.querySelector("#tutor_image");
 
 tutorimage.src = `${teacherDeta.image}`;
@@ -57,4 +57,4 @@ document.querySelector("#set-eductaion").innerText=`${teacherDeta.qualification}
 const exp = teacherDeta.expertise;
 
 document.querySelector("#set-expertise").innerText = exp.join(",");
-document.querySelector("#name").innerText = teacherDeta.teacherDetail.name;
+document.querySelector("#name").innerText =teacherDeta.teacherDetail.name.toUpperCase();
