@@ -268,5 +268,20 @@ console.log(val)
 });
 
 
+// let authe = document.getElementById("google")
+
+// authe.onclick=async()=>{
+//   console.log("hi")
+//   let res = await fetch("http://localhost:9090/auth/google",{
+//     method:"GET"
+//   })
+
+//   let response = await res.json()
+//   console.log(response)
+//   if(response.msg==="Login succesfull"){
+//     window.location.href = "index.html"
+//   }
+// }
+
 
 

@@ -1,102 +1,78 @@
-const url = `http://localhost:9090/scheduler/teacher/getAllTeacher`;
-
-const getData = async () => {
-  let response = await fetch(url);
-  let data = await response.json();
-  findTecher(data);
-  console.log(data);
-};
 
 
-
-function findTecher(data){
-  let tutorHeading= document.getElementById("tutor-heading").innerText;
-  for(let i=0;i<=data.length-1;i++){
-    if(data[i].teacherDetail.name==tutorHeading){
-     localStorage.setItem("tutor", JSON.stringify(data[i]));
-      break;
-      }else{
-        console.log("No")
-      }
-  }
-}
-
-const getStarted= document.getElementById("get-started");
-
-getStarted.onclick=()=>{
-  getData();
-}
-
-const tutor= JSON.parse(localStorage.getItem("tutor"));
+const tutor = JSON.parse(localStorage.getItem("tutor"));
 
 // const url= "https://gray-tired-gharial.cyclic.app/"
+const Teacher_Booking_id = tutor.Teacher_Booking_id
 
+let myslot = "";
+let slot1 = document.getElementById("slot1");
+let slot2 = document.getElementById("slot2");
+let slot3 = document.getElementById("slot3");
+let slot4 = document.getElementById("slot4");
 
-
-let slot1= document.getElementById("slot1");
-let slot2= document.getElementById("slot2");
-let slot3= document.getElementById("slot3");
-let slot4= document.getElementById("slot4");
-
-slot1.onclick=()=>{
-  slot1Book();
+if (slot1.checked === true) {
+  myslot = slot1.value;
 }
-slot2.onclick=()=>{
-  slot2Book();
+if (slot2.checked === true) {
+  myslot = slot2.value;
 }
-slot3.onclick=()=>{
-  slot3Book();
+if (slot3.checked === true) {
+  myslot = slot3.value;
 }
-slot4.onclick=()=>{
-  slot4Book();
-}
-
-let mySlot;
-
-function slot1(){
-  mySlot="slot 1";
-}
-function slot2(){
-  mySlot="slot 2";
-}
-function slot3(){
-  mySlot="slot 3";
-}
-function slot4(){
-  mySlot="slot 4";
+if (slot4.checked === true) {
+  myslot = slot4.value;
 }
 
 
-const signupBtn= document.getElementById('payBTN');
 
-const payUser= async()=>{
-    const fname= document.getElementById('fName').value;
-    const lname= document.getElementById('lName').value;
-    const email= document.getElementById('email').value;
-    const mobile= document.getElementById('mbl').value;
-    
-    localStorage.setItem("lfirstName", JSON.stringify(fname))
+const signupBtn = document.getElementById("submit");
 
-    const user={fname,lname,email,mobile,password, mySlot}
+signupBtn.addEventListener("submit", async function(event){
+  event.preventDefault();
+  console.log("hi")
+  const StudentName = document.getElementById("fName").value;
+  const courseName = document.getElementById("lName").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("mbl").value;
 
-    try {
-        const res= await fetch("https://localhost",{
-            method:'POST',
-            body: JSON.stringify(user),
-            headers:{
-                'Content-type': "application/json"
-            }
-        });
-       
-        console.log("Register Succesfully");
-      window.location.href= 'login.html'
-        
-    } catch (error) {
-        console.log("Error while Register");
-        console.log(error);
-    }
-}
+  let slot = "";
+  let slot1 = document.getElementById("slot1");
+  let slot2 = document.getElementById("slot2");
+  let slot3 = document.getElementById("slot3");
+  let slot4 = document.getElementById("slot4");
 
-signupBtn.onclick=()=>{
-payUser();
-}
+  if (slot1.checked === true) {
+    slot = slot1.value;
+  }
+  if (slot2.checked === true) {
+    slot = slot2.value;
+  }
+  if (slot3.checked === true) {
+    slot = slot3.value;
+  }
+  if (slot4.checked === true) {
+    slot = slot4.value;
+  }
+
+  const user = { StudentName, email, phone, courseName,Teacher_Booking_id ,slot};
+  console.log(user)
+  const res = await fetch("http://localhost:9090/booking/slotBooking", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json"},
+      body: JSON.stringify(user)
+  })
+
+  const response = await res.json();
+  console.log(response);
+
+})
+
+
+
+
+
+
+   
+
