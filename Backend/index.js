@@ -28,6 +28,8 @@ const {UserRouter} = require('./Routes/user.route')
 const {StudentRouter} = require('./Routes/student.route')
 const {TeacherRouter} = require('./Routes/teacher.route')
 const {FeedbackRouter} = require("./Routes/feedback.route")
+const {BookingRouter} = require("./Routes/slotBooking.route")
+const {CourseRouter} = require('./Routes/course.route')
 
 
 
@@ -36,6 +38,8 @@ app.use('/userRoutes',UserRouter)
 app.use("/scheduler/student",StudentRouter)
 app.use("/scheduler/teacher",TeacherRouter)
 app.use("/feedback",FeedbackRouter)
+app.use("/booking",BookingRouter)
+app.use('/course',CourseRouter)
 
 
 

@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 
 
 const teacherSchema  =  mongoose.Schema({
-    //Teacher_id: String,
+    Teacher_Booking_id: Number,
     teacherDetail:{
         teacherId:String,
         name:String,

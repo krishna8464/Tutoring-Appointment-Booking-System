@@ -37,8 +37,8 @@ TeacherRouter.post("/addDetails",async(req,res)=>{
                     name:decoded.name,
                     email:decoded.email,
                 }
-
-                const student = new TeacherModel({teacherDetail,mobile,gender,address,qualification,experience,expertise})
+                const  Teacher_Booking_id = Math.ceil(Math.random()*10000)
+                const student = new TeacherModel({teacherDetail,mobile,gender,address,qualification,experience,expertise,Teacher_Booking_id})
                 await student.save()
                 await redis.getdel('signupToken')
                 
@@ -66,6 +66,7 @@ TeacherRouter.get("/getAllTeacher",async(req,res)=>{
 })
 
 
+//update teacher
 TeacherRouter.patch("/update/TeacherDetails",authenticate, async(req,res)=>{
     const id  = req.body.userid ;
     const data = req.body
@@ -82,6 +83,7 @@ TeacherRouter.patch("/update/TeacherDetails",authenticate, async(req,res)=>{
 })
 
 
+//delete teacher
 TeacherRouter.delete("/delete/TeacherDetails",authenticate, async(req,res)=>{
     const id  = req.body.userid ;
     try{

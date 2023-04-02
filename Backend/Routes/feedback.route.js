@@ -4,10 +4,12 @@ const express = require('express');
 const {Feedback} = require('../Models/feedback.model');
 const FeedbackRouter = express.Router();
 
+
+//Post feedback
 FeedbackRouter.post('/StudentFeedback', async (req, res) => {
   try {
-    const {name,email,message,date} = req.body;
-    const feedback = new Feedback({name,email,message,date})
+    const {name,email,message} = req.body;
+    const feedback = new Feedback({name,email,message})
     await feedback.save();
     res.status(201).send({"msg":"feedback added","feedback":feedback});
   } catch (err) {
@@ -17,6 +19,7 @@ FeedbackRouter.post('/StudentFeedback', async (req, res) => {
 });
 
 
+//all feedback
 FeedbackRouter.get("/allFeedback", async(req,res)=>{
     try{
         const feed= await Feedback.find()

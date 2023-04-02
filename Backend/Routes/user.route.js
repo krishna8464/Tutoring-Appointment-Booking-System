@@ -130,7 +130,7 @@ UserRouter.post('/login', async (req, res) => {
             u = ele._id 
             stats = true
             userdetials=ele
-             break      
+            break      
         }
     }
     if(stats===false){
@@ -138,7 +138,7 @@ UserRouter.post('/login', async (req, res) => {
     }
 
 
-    // console.log(u)
+   
     console.log(student)
 
    
