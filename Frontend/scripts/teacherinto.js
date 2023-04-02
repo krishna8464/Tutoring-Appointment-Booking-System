@@ -58,3 +58,7 @@ const exp = teacherDeta.expertise;
 
 document.querySelector("#set-expertise").innerText = exp.join(",");
 document.querySelector("#name").innerText =teacherDeta.teacherDetail.name.toUpperCase();
+
+
+
+
