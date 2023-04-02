@@ -4,7 +4,8 @@ const tutor = JSON.parse(localStorage.getItem("tutor"));
 
 // const url= "https://gray-tired-gharial.cyclic.app/"
 const Teacher_Booking_id = tutor.Teacher_Booking_id
-
+// console.log(tutor)
+// console.log
 let myslot = "";
 let slot1 = document.getElementById("slot1");
 let slot2 = document.getElementById("slot2");
@@ -29,6 +30,7 @@ if (slot4.checked === true) {
 const signupBtn = document.getElementById("submit");
 
 signupBtn.addEventListener("submit", async function(event){
+  window.location.href='payment.html'
   event.preventDefault();
   console.log("hi")
   const StudentName = document.getElementById("fName").value;
@@ -69,10 +71,17 @@ signupBtn.addEventListener("submit", async function(event){
 
 })
 
+let image= document.getElementById("image")
+let name= document.getElementById("name")
+let email= document.getElementById("email")
+let edu= document.getElementById("edu")
+let sub= document.getElementById("sub")
+let exp= document.getElementById("exp")
 
-
-
-
-
+name.textContent="Name:"+" "+tutor.teacherDetail.name;
+email.textContent=tutor.teacherDetail.email;
+edu.textContent="Education:"+" "+tutor.qualification;
+sub.textContent="Subject:"+" "+tutor.expertise.join(" ");
+exp.textContent="Experience:"+" "+tutor.experience+" "+"Years";
    
 
