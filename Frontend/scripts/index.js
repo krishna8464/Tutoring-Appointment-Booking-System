@@ -27,3 +27,11 @@ if(access === "true"){
 function teacher(){
     window.location.href="teachers.html"
 }
+
+
+let searchtext = document.getElementById("searchtext");
+
+function search(event){
+    event.preventDefault();
+    console.log(searchtext.value)
+}

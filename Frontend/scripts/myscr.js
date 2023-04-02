@@ -1,4 +1,4 @@
-const url = `http://localhost:9090/scheduler/teacher/getAllTeacher`;
+const url = `https://odd-teal-caridea-tux.cyclic.app/scheduler/teacher/getAllTeacher`;
 
 const getData = async () => {
   let response = await fetch(url);

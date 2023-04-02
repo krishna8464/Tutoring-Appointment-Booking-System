@@ -21,7 +21,7 @@ BookingRouter.post("/searchTeacher",async(req,res)=>{
     const {name} =  req.body
     console.log(name)
     try{
-        const teacher = await TeacherModel.find({"teacherDetail.name":name})
+        const teacher = await TeacherModel.find({"teacherDetail.name":{ $regex:name}});
         res.send(teacher)
     }
     catch(err){
