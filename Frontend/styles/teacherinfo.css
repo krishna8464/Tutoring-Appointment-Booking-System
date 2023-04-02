@@ -1,3 +1,6 @@
+
+/* nav bar code starts */
+
 #nav {
   width: 100%;
   margin: auto;
@@ -28,6 +31,7 @@ body {
 
 #navelemetns {
   display: flex;
+  color: black;
 }
 #navelemetns > div {
   margin-right: 20px;
@@ -58,6 +62,153 @@ body {
     flex-direction: column;
   }
 }
+
+/* nav bar code ends */
+
+/* top cont code starts */
+#topcont>div>img{
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (min-width:50px) and (max-width:338px) {
+  #nav{
+      position: relative;
+      width: 100%;
+  }
+}
+
+#serach{
+  /* color: #F07922; */
+  border-color: #F07922;
+  
+}
+#serach:hover{
+  background-color: #f07922;
+  border-color: #f07922;
+}
+
+#subdivs{
+  display: grid;
+  grid-template-columns: repeat(4,1fr) ;
+  width: 60%;
+  height: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  margin-top: -100px;
+  
+
+}
+
+#subdivs>div{
+  padding: 15px;
+  height: auto;
+  position: relative;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 100%;
+  cursor: pointer;
+  /* max-width: fit-content; */
+}
+
+#subdivs>div:hover{
+  margin-top: -50px;
+}
+
+#subdivs>div>div{
+  padding: 10px;
+}
+#subdivs>div>div>img:nth-child(1){
+  color: #fff;
+}
+
+#subdivs>div>div:nth-child(2){
+  font-weight: 900;
+}
+
+#subdivs>div:nth-child(1){
+  background-color: #f07922;
+  color: #fff;
+  height: 300px;
+  padding: 10px;
+  
+}
+#subdivs>div:nth-child(2){
+  background-color: #457992;
+  color: #fff;
+  height: 250px;
+  padding: 10px;
+}
+#subdivs>div:nth-child(3){
+  background-color: #f0a822;
+  color: #fff;
+  height: 300px;
+  padding: 10px;
+}
+#subdivs>div:nth-child(4){
+  background-color: #004566;
+  color: #fff;
+  height: 250px;
+  padding: 10px;
+}
+
+
+
+.imgs{
+  width: 60px;
+  height: 60px;
+  color: #fff;
+}
+
+@media screen and (min-width:1000px) and (max-width:1242px) {
+  #subdivs{
+      width: 80%;
+  }
+  #subdivs>div:hover{
+      margin-top: -50px;
+  }
+}
+
+@media screen and (min-width:950px) and (max-width:1000px) {
+  #subdivs{
+      width: 90%;
+  }
+  #subdivs>div:hover{
+      margin-top: -50px;
+  }
+}
+
+@media screen and (min-width:760px) and (max-width:950px) {
+  #subdivs{
+      width: 100%;
+  }
+  #subdivs>div:hover{
+      margin-top: -50px;
+  }
+}
+
+@media screen and (min-width:50px) and (max-width:825px) {
+  #subdivs{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      position: static;
+      margin-top: 50px;
+  }
+  #subdivs>div{
+      position: static;
+      /* max-width: fit-content; */
+  }
+  #subdivs>div:hover{
+      margin-top: -50px;
+  }
+}
+
+
+/* top cont code ends */
 
 
 
@@ -180,65 +331,65 @@ body {
 
 
 
-
-/* Footer code starts */
-#footer>div{
+  /* Footer code starts */
+  #footer>div{
     /* margin-top: 250px; */
     display: flex;
     justify-content: space-around;
     color: white;
-}
-#footer>div>div{
+    margin-top: 60px;
+  }
+  #footer>div>div{
     display: flex;
-}
-
-
-#footer>div{
+  }
+  
+  
+  #footer>div{
     background-color: #004566;
     width: 100%;
     padding: 15px 10px 15px 10px;
     display: flex;
     justify-content: space-evenly;
-}
-
-#footer>div>div>div{
+  }
+  
+  #footer>div>div>div{
     margin-right: 15px;
-}
-
-.sty{
+  }
+  
+  .sty{
    text-decoration: underline;
    cursor: pointer;
-}
-
-.sty:hover{
+  }
+  
+  .sty:hover{
     color: #f07922;
-}
-
-#seconddiv>div{
+  }
+  
+  #seconddiv>div{
     font-size: 15px;
     cursor: pointer;
-
-}
-
-#seconddiv>div:nth-child(1){
+  
+  }
+  
+  #seconddiv>div:nth-child(1){
     color: #f07922;
-}
-
-#seconddiv>div:nth-child(5){
+  }
+  
+  #seconddiv>div:nth-child(5){
     color: #f07922;
-}
-
-#seconddiv>div:hover{
+  }
+  
+  #seconddiv>div:hover{
     color: #f07922;
-}
-
-@media all and (min-width: 585px) and (max-width: 1035px) {
+  }
+  
+  @media all and (min-width: 585px) and (max-width: 1035px) {
     #footer>div{
         flex-direction: column;
     }
-}
-
-@media all and (min-width: 317px) and (max-width: 585px) {
+  }
+  
+  @media all and (min-width: 317px) and (max-width: 585px) {
     #footer>div{
         flex-direction: row;
     }
@@ -246,9 +397,9 @@ body {
         display: flex;
         flex-direction: column;
     }
-}
-
-@media all and (min-width: 0px) and (max-width: 317px) {
+  }
+  
+  @media all and (min-width: 0px) and (max-width: 317px) {
     #footer>div{
         flex-direction: column;
     }
@@ -256,6 +407,6 @@ body {
         display: flex;
         flex-direction: column;
     }
-}
-
-/* Footer code ends */
+  }
+  
+  /* Footer code ends */
