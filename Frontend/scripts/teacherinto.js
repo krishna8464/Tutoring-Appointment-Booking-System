@@ -62,3 +62,6 @@ document.querySelector("#name").innerText =teacherDeta.teacherDetail.name.toUppe
 
 
 
+
+
+

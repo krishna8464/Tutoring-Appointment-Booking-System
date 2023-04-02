@@ -21,6 +21,7 @@ function findTecher(data) {
 
 const getStarted = document.getElementById("get-started");
 
-getStarted.onclick = () => {
+getStarted.onclick = async() => {
   getData();
+  window.location.href="schedule.html"
 };
