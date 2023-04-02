@@ -15,7 +15,7 @@
 </div>
 <div id="rightDiv">
     <div id="container">
-        <form>
+        <form id="submit">
             <p>Book Your Slot</p>
 
             <label for=""  class="labeldown">Email<span class="star">*</span></label><br />
@@ -26,21 +26,33 @@
                     <input id="fName" type="text" required><br />
                 </div>
                 <div class="lastName">
-                    <label for="" class="labeldown">Last name<span class="star">*</span></label><br />
+                    <label for="" class="labeldown">Course Name<span class="star">*</span></label><br />
                     <input id="lName" type="text"required>
                 </div>
             </div>
             <label for="" class="labeldown">Mobile number</label><br />
             <input id="mbl" type="number" ><br />
             <label for="" class="labeldown">Choose Slots<span class="star">*</span></label><br />
-           <div id="totalSlot">
-            <div><button id="slot1">8:00 - 10:00</button></div>
-            <div><button id="slot2">8:00 - 10:00</button></div>
-            <div><button id="slot3">8:00 - 10:00</button></div>
-            <div><button id="slot4">8:00 - 10:00</button></div>
-           </div>
            
-            <div><a  id="payBTN" >Continue</a></div>
+            <div id="totalSlot" style="display: grid; grid-template-columns: repeat(2,1fr); border: 1px solid #ccc;border-bottom-width: 2px;border-color: #9b59b6; padding: 5px 5px 5px 8px; border-radius: 8px; "> 
+                <div style="display: flex;align-items: center;" >
+                  <label for="">8:00 - 10:00</label>
+                  <input type="checkbox" placeholder="Maths" id="slot1" value="slot1" style="width: 8%; margin-left: 5%; "  >
+                </div>
+                <div style="display: flex;align-items: center;" >
+                    <label for="">8:00 - 10:00</label>
+                    <input type="checkbox" placeholder="Maths" id="slot2" value="slot2" style="width: 8%; margin-left: 5%; "  >
+                  </div>
+                  <div style="display: flex;align-items: center;" >
+                    <label for="">8:00 - 10:00</label>
+                    <input type="checkbox" placeholder="Maths" id="slot3" value="slot3" style="width: 8%; margin-left: 5%; "  >
+                  </div>
+                  <div style="display: flex;align-items: center;" >
+                    <label for="">8:00 - 10:00</label>
+                    <input type="checkbox" placeholder="Maths" id="slot4" value="slot4" style="width: 8%; margin-left: 5%; "  >
+                  </div>
+                </div>
+                <input type="submit" value="Submit">
         </form>
         <div id="familyText">
             <h1>Join <br> <span>SCHEDULER</span> <br> to get <br> inspired knowledge.</h1>
@@ -50,4 +62,4 @@
 </div>
 </body>
 </html>
-<script src="../scripts/signup.js"></script>
+<script src="../scripts/schedule.js"></script>
