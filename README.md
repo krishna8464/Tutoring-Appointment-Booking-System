@@ -31,6 +31,11 @@
 Following ER diagram indicates the database tables and thier interaction which we are using.
 ![WhatsApp Image 2023-03-28 at 19 55 01](https://user-images.githubusercontent.com/82109628/229362398-d2545398-01da-4b4e-8af1-9e4d747c184b.jpg)
 
+## System Design
+Following HLD diagram indicates the database build in components
+<img width="626" alt="tutoring_HLD" src="https://user-images.githubusercontent.com/82109628/229363095-a1e994c8-d34c-48ee-bef1-052e37526639.png">
+
+
 ## Features
 
 * User and Admin authentication & validation with session uuid having.
@@ -45,11 +50,11 @@ Following ER diagram indicates the database tables and thier interaction which w
  
  
  ## Contributors
-- [@Vamshi Krishna](https://github.com/Vamshi8464)
+- [@Yenda Vamshi Krishna](https://github.com/Vamshi8464)
 - [@Birendra Mahto](https://github.com/bire210)
 - [@Ekta Dhawal ](https://github.com/Dekta)
 - [@Aniket Babariya](https://github.com/aniketbabariya24)
-- [@Jay Shukla](https://github.com/jayshukla)
+- [@Jay Shukla](https://github.com/jaysukla)
 
 
 ```
