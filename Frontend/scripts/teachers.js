@@ -56,7 +56,7 @@ let teacherimg = [
 
 
 let ind = 0;
-const appends = (data) => {
+const appends = (data,i) => {
   mainDiv.innerHTML = null;
   data.forEach((el,index) => {
     let cardDiv = document.createElement("div");
@@ -87,6 +87,7 @@ const appends = (data) => {
     let addBtn = document.createElement("button");
     addBtn.className = "addBtn";
     addBtn.addEventListener("click",()=>{
+      el.image=teacherimg[index];
       sessionStorage.setItem("teacherdet",JSON.stringify(el));
       window.location.href="teacherinfo.html"
     })
