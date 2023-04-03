@@ -57,6 +57,10 @@ Following HLD diagram indicates the database build in components
 - [@Jay Shukla](https://github.com/jaysukla)
 
 
+
+##Deploy Link
+- Netlify -> https://comforting-nougat-70fd30.netlify.app/index.html
+
 ```
 ## API Module Endpoints
 
@@ -185,7 +189,9 @@ https://odd-teal-caridea-tux.cyclic.app/booking/slotBooking
 Search teacher with name
 https://odd-teal-caridea-tux.cyclic.app/booking/searchTeacher
 
-##Deploy Link
-- Netlify -> https://comforting-nougat-70fd30.netlify.app/index.html
+
+
+
+
 
 
