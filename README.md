@@ -185,4 +185,7 @@ https://odd-teal-caridea-tux.cyclic.app/booking/slotBooking
 Search teacher with name
 https://odd-teal-caridea-tux.cyclic.app/booking/searchTeacher
 
+##Deploy Link
+- Netlify -> https://comforting-nougat-70fd30.netlify.app/index.html
+
 
